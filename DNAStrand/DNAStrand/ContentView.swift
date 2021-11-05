@@ -18,6 +18,9 @@ struct ContentView: View {
             .alert(item: $error) { error in
                 error.alert()
             }
+            .onAppear {
+                fetchAPI()
+            }
     }
     
     func fetchAPI() {
@@ -33,9 +36,11 @@ struct ContentView: View {
     }
 }
 
+#if DEBUG
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .environment(\.service, Service.defaultValue)
+            .environment(\.service, Service.defaultValuePreview)
     }
 }
+#endif
