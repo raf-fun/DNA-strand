@@ -6,5 +6,7 @@
 //
 
 public class DNAStrandService: Service {
-    
+    public func fetchDNAInfo(completion: @escaping (Result<Int, AppError>)->Void) {
+        
+    }
 }
