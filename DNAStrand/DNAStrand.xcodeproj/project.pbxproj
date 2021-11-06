@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3864B3BC27359F4F005CE6B3 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864B3BB27359F4F005CE6B3 /* CardView.swift */; };
+		38E870C02736483900E857B1 /* CardFullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E870BF2736483900E857B1 /* CardFullView.swift */; };
 		D22C6B9B2734FE6500303F44 /* DNAStrandApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22C6B9A2734FE6500303F44 /* DNAStrandApp.swift */; };
 		D22C6B9D2734FE6500303F44 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22C6B9C2734FE6500303F44 /* ContentView.swift */; };
 		D22C6B9F2734FE6700303F44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D22C6B9E2734FE6700303F44 /* Assets.xcassets */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3864B3BB27359F4F005CE6B3 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		38E870BF2736483900E857B1 /* CardFullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFullView.swift; sourceTree = "<group>"; };
 		D22C6B972734FE6500303F44 /* DNAStrand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DNAStrand.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D22C6B9A2734FE6500303F44 /* DNAStrandApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNAStrandApp.swift; sourceTree = "<group>"; };
 		D22C6B9C2734FE6500303F44 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -41,6 +45,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3864B3BA27359EBE005CE6B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3864B3BB27359F4F005CE6B3 /* CardView.swift */,
+				38E870BF2736483900E857B1 /* CardFullView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		D22C6B8E2734FE6500303F44 = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +75,7 @@
 		D22C6B992734FE6500303F44 /* DNAStrand */ = {
 			isa = PBXGroup;
 			children = (
+				3864B3BA27359EBE005CE6B3 /* View */,
 				D22C6B9A2734FE6500303F44 /* DNAStrandApp.swift */,
 				D22C6B9C2734FE6500303F44 /* ContentView.swift */,
 				D22C6BAC273512B600303F44 /* Utilities */,
@@ -173,9 +187,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D22C6B9D2734FE6500303F44 /* ContentView.swift in Sources */,
+				38E870C02736483900E857B1 /* CardFullView.swift in Sources */,
 				D22C6BB32735168E00303F44 /* AppEnvironment.swift in Sources */,
 				D22C6BAE273512C200303F44 /* AppError+Extensions.swift in Sources */,
 				D22C6B9B2734FE6500303F44 /* DNAStrandApp.swift in Sources */,
+				3864B3BC27359F4F005CE6B3 /* CardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
