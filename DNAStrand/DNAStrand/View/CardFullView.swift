@@ -30,16 +30,11 @@ struct CardFullView: View {
                 }
                 
             }
-            ZStack {
-                Circle()
-                    .foregroundStyle(.thinMaterial)
-                    .frame(width: 30, height: 30)
-                    .padding()
-                    
-                Image(systemName: "xmark")
-                    .foregroundColor(.gray)
-            }
+            
+            CloseButton()
+            
         }.ignoresSafeArea()
+            .statusBar(hidden: true)
     }
 }
 
@@ -59,5 +54,25 @@ struct TitleParagraphDisplayView: View {
 struct CardFullView_Previews: PreviewProvider {
     static var previews: some View {
         CardFullView()
+    }
+}
+
+struct CloseButton: View {
+    @Environment(\.dismiss) var dismiss
+    
+    var body: some View {
+        Button {
+            dismiss()
+        } label: {
+            ZStack {
+                Circle()
+                    .foregroundStyle(.thinMaterial)
+                    .frame(width: 30, height: 30)
+                    .padding()
+                
+                Image(systemName: "xmark")
+                    .foregroundColor(.gray)
+            }
+        }
     }
 }

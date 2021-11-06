@@ -15,7 +15,7 @@ struct DNAStrandApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
                 .environment(\.service, service)
         }
     }

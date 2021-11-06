@@ -30,6 +30,11 @@ struct CardView: View {
         .shadow(radius: 10)
     }
     
+    static var example: CardView {
+        CardView(DisplayText: "Name of Gene", DisplayTextColor: .green,
+                 Background: Image("Insulin"))
+    }
+    
 }
 
 struct CardView_Previews: PreviewProvider {
