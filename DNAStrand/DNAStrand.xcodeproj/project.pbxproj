@@ -17,6 +17,7 @@
 		D22C6BAE273512C200303F44 /* AppError+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22C6BAD273512C200303F44 /* AppError+Extensions.swift */; };
 		D22C6BB12735152A00303F44 /* DNAStrandService in Frameworks */ = {isa = PBXBuildFile; productRef = D22C6BB02735152A00303F44 /* DNAStrandService */; };
 		D22C6BB32735168E00303F44 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22C6BB22735168E00303F44 /* AppEnvironment.swift */; };
+		DA843E25273722D30021BE8A /* GeneViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA843E24273722D30021BE8A /* GeneViewModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		D22C6BA82734FF6700303F44 /* DNAStrandService */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DNAStrandService; path = ../DNAStrandService; sourceTree = "<group>"; };
 		D22C6BAD273512C200303F44 /* AppError+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppError+Extensions.swift"; sourceTree = "<group>"; };
 		D22C6BB22735168E00303F44 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		DA843E24273722D30021BE8A /* GeneViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneViewModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			children = (
 				D22C6BAD273512C200303F44 /* AppError+Extensions.swift */,
 				D22C6BB22735168E00303F44 /* AppEnvironment.swift */,
+				DA843E24273722D30021BE8A /* GeneViewModifier.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA843E25273722D30021BE8A /* GeneViewModifier.swift in Sources */,
 				D22C6B9D2734FE6500303F44 /* ContentView.swift in Sources */,
 				38E870C02736483900E857B1 /* CardFullView.swift in Sources */,
 				D22C6BB32735168E00303F44 /* AppEnvironment.swift in Sources */,
