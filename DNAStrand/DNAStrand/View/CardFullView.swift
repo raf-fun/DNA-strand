@@ -19,7 +19,7 @@ struct CardFullView: View {
                     VStack {
                         Image("Insulin")
                             .resizable()
-                            .geneViewModifier(for: geneName)
+//                            .geneViewModifier(for: geneName)
                         
                         ForEach(1..<5) { _ in
                             TitleParagraphDisplayView()
