@@ -11,25 +11,61 @@ struct CreditsView: View {
     var body: some View {
         NavigationView {
             Form {
+                // Organized by
+                Section {
+                    Link(destination: URL(string: "https://swiftuijam.com")!) {
+                        Image("jamHeader")
+                            .resizable()
+                            .renderingMode(.original)
+                            .aspectRatio(contentMode: .fit)
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            .cornerRadius(12)
+                    }
+                }
+                
                 // About the Team
                 Section {
-                    Text("This app was created for a random group of people that get together to play/learn with SwiftUI during the SwiftUIJam Nov2021.\n\nDifferent timezones and expertise make the whole experience more challenging.")
+                    Text("This app was created for a group of people that got together for a weekend to play and learn with SwiftUI during the SwiftUIJam Nov2021.\n\nDifferent timezones and expertise make the whole experience more challenging.")
                         .lineLimit(nil)
                         .font(.footnote)
                 } header: {
                     Text("About the Team")
                 }
-
+                
                 // Contributors
                 Section {
-                    Contributor(name: "R4S3C", twitterHandle: "@R4S3CDev", website: "http://daysonsite.app")
-                    Contributor(name: "Neil Jain", twitterHandle: "@neilgotnothing", website: "https://neilsultimatelab.github.io")
-                    Contributor(name: "Djallil Elkebir", twitterHandle: "@DjallilOS", website: "https://Djallil14.github.com")
+                    Contributor(name: "R4S3C", twitterHandle: "R4S3CDev")
+                    Contributor(name: "Neil Jain", twitterHandle: "neilgotnothing", website: "https://neilsultimatelab.github.io")
                     Contributor(name: "Rafael Carter", twitterHandle: "@DevRafaelC", website: "https://github.com/raf-fun")
+                    Contributor(name: "Djallil Elkebir", twitterHandle: "@DjallilOS", website: "https://github.com/Djallil14")
+
+                    Contributor(name: "Jarod Paulson")
+                    Contributor(name: "Sheikh Bayazaid")
                 } header: {
                     Text("Contributors")
                 }
-
+                
+                // Third-Party Libraries
+                Section {
+                    Link(destination: URL(string: "https://github.com/scinfu/SwiftSoup")!) {
+                        Text("SwiftSoup")
+                    }
+                    
+                    Link(destination: URL(string: "https://github.com/lorenzofiamingo/SwiftUI-CachedAsyncImage")!) {
+                        Text("CachedAsyncImage")
+                    }
+                } header: {
+                    Text("Libraries")
+                }
+                
+                // App icon
+                Section {
+                    Link(destination: URL(string: "https://apps.apple.com/app/bakery-simple-icon-creator/id1575220747")!) {
+                        Text("Bakery - Simple Icon Creator")
+                    }
+                } header: {
+                    Text("App Icon")
+                }
             }
             .navigationTitle("Credits")
         }
@@ -43,41 +79,24 @@ struct Contributor: View {
     var website: String?
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        HStack(alignment: .center, spacing: 12) {
             Text(name)
                 .font(.subheadline)
-                
             
-            HStack {
-                if let twitterHandle = twitterHandle {
-                    Label {
-                        Text(twitterHandle)
-                            .foregroundColor(.primary.opacity(0.7))
-                    } icon: {
-                        Image("twitter")
-                            .resizable()
-                            .renderingMode(.template)
-                            .frame(width: 20, height: 20, alignment: .trailing)
-                            .foregroundColor(.blue.opacity(0.7))
-                    }
-                    .font(.footnote)
-
+            if let twitterHandle = twitterHandle {
+                Link(destination: URL(string: "https://twitter.com/\(twitterHandle)")!) {
+                    Text("Twitter")
+                        .font(.caption2)
                 }
+                .buttonStyle(.bordered)
             }
             
-            HStack {
-                if let website = website {
-                    Label {
-                        Text(website)
-                            .foregroundColor(.primary.opacity(0.7))
-                    } icon: {
-                        Image(systemName: "network")
-                            .resizable()
-                            .frame(width: 20, height: 20, alignment: .trailing)
-                            .foregroundColor(.blue.opacity(0.7))
-                    }
-                    .font(.footnote)
+            if let website = website {
+                Link(destination: URL(string: "\(website)")!) {
+                    Text("Website")
+                        .font(.caption2)
                 }
+                .buttonStyle(.bordered)
             }
         }
     }
@@ -87,6 +106,7 @@ struct Contributor: View {
 struct CreditsView_Previews: PreviewProvider {
     static var previews: some View {
         CreditsView()
+            .preferredColorScheme(.dark)
     }
 }
 #endif
