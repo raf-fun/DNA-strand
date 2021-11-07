@@ -23,7 +23,7 @@ struct HomeView: View {
             
             ScrollView {
                 HStack {
-                    Text("DNAStrand")
+                    Text("Ingeneious")
                         .bold()
                         .font(.largeTitle)
                         .frame(maxWidth: .infinity, alignment: .leading)

@@ -70,7 +70,7 @@ struct CardFullView: View {
             )
             .overlay(
                 CloseButton(showDetails: $showDetails).padding(.top, 0),
-                alignment: .topLeading
+                alignment: .topTrailing
             )
         }
         .ignoresSafeArea()
@@ -111,22 +111,6 @@ struct CloseButton: View {
                     .foregroundColor(.primary)
             }
         }.ignoresSafeArea()
-    }
-}
-
-struct TitleParagraphDisplayView: View {
-    var body: some View {
-        VStack {
-            Text("Title inside Gene:")
-                .bold()
-                .frame( maxWidth: .infinity, alignment: .leading)
-                .shadow(radius: 1, x: 5, y: 5)
-                .padding(.bottom, 0.5)
-            
-            Text("Stranded. Yes, she was now the first person ever to land on Venus, but that was of little consequence. Her name would be read by millions in school as the first to land here, but that celebrity would never actually be seen by her. She looked at the control panel and knew there was nothing that would ever get it back into working order. She was the first and it was not clear this would also be her last.")
-        }
-        .foregroundColor(.white.opacity(0.8))
-        .padding()
     }
 }
 

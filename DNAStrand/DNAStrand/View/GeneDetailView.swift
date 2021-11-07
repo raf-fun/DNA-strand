@@ -12,11 +12,11 @@ struct OtherGeneDetailView: View {
     let gene: WikiAPIResult
     var namespace: Namespace.ID
     var onCompletion: (()->Void)?
-    
+
     var geneData: WikiData {
         gene.query.pages.resultData
     }
-    
+
     @State var geneURL: WikiData? = nil
     var body: some View {
         ZStack(alignment:.top) {
