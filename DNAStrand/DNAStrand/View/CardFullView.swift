@@ -66,9 +66,6 @@ struct CardFullView: View {
         }
         .ignoresSafeArea()
         .statusBar(hidden: true)
-        .background(
-            Rectangle().matchedGeometryEffect(id: "frame\(gene.id)", in: namespace)
-        )
         .onAppear {
             self.isVisible = true
         }
