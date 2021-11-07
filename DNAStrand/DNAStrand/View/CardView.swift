@@ -6,41 +6,45 @@
 //
 
 import SwiftUI
+import CachedAsyncImage
 
 struct CardView: View {
     
     var gene: WikiData
     var namespace: Namespace.ID
+    var cornerRadius: CGFloat = 30
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Spacer()
-            
-            Text(gene.title)
-                .bold()
-                .foregroundColor(.white)
-                .frame(maxWidth: .infinity, alignment: .bottomLeading)
-                .shadow(color: .black, radius: 1)
-                .matchedGeometryEffect(id: "title\(gene.id)", in: namespace)
-            
+            HStack {
+                Text(gene.title)
+                    .font(.title)
+                    .foregroundColor(Color(.label))
+                    .padding(6)
+                    .background(
+                        .ultraThinMaterial
+                    )
+                    .cornerRadius(12)
+                Spacer()
+            }
         }
         .padding(.horizontal, 20)
-        .padding(.vertical, 40)
+        .padding(.vertical, 20)
         .frame(maxWidth: .infinity)
         .frame(height: 300)
         .background(
             Group {
                 if let urlString = gene.thumbnail?.formattedImageLink(width: 500) {
-                    AsyncImage(url: URL(string: urlString)) { image in
+                    CachedAsyncImage(url: URL(string: urlString)) { image in
                         image
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(maxWidth: .infinity)
                             .frame(height: 300)
                             .disabled(true)
-                            .matchedGeometryEffect(id: "image\(gene.id)", in: namespace)
                             .overlay(
-                                LinearGradient(colors: [Color.gray.opacity(0), Color.gray.opacity(0.1)], startPoint: .top, endPoint: .bottom)
+                                LinearGradient(colors: [Color.gray.opacity(0), Color.gray.opacity(0.2)], startPoint: .top, endPoint: .bottom)
                             )
                     } placeholder: {
                         ProgressView()
@@ -51,7 +55,7 @@ struct CardView: View {
             }
         )
         .mask(
-            RoundedRectangle(cornerRadius: 30)
+            RoundedRectangle(cornerRadius: cornerRadius)
         )
     }
   

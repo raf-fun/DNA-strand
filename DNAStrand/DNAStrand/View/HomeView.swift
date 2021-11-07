@@ -68,6 +68,7 @@ struct HomeView: View {
         case .success(let genes):
             ForEach(genes, id: \.wikidata.title) { gene in
                 CardView(gene: gene.wikidata, namespace: namespace)
+                    .matchedGeometryEffect(id: "card\(gene.wikidata.id)", in: namespace)
                     .padding()
                     .onTapGesture {
                         withAnimation(.openCard) {

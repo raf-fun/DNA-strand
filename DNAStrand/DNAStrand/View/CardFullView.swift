@@ -22,27 +22,8 @@ struct CardFullView: View {
             GeometryReader { geometry in
                 ScrollView(showsIndicators: false) {
                     VStack {
-                        if let urlString = gene.thumbnail?.formattedImageLink(width: 500) {
-                            AsyncImage(url: URL(string: urlString)) { image in
-                                image
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(maxWidth: .infinity)
-                                    .frame(height: 300)
-                                    .disabled(true)
-                                    .matchedGeometryEffect(id: "image\(gene.id)", in: namespace)
-                            } placeholder: {
-                                ProgressView()
-                            }
-                        } else {
-                            Color.gray.opacity(0.2)
-                        }
-                        //.geneViewModifier(for: geneName)
-                        
-                        //ForEach(1..<5) { _ in
-                        //    TitleParagraphDisplayView()
-                        //}
-                        //.matchedGeometryEffect(id: "image\(gene.id)", in: namespace)
+                        CardView(gene: gene, namespace: namespace, cornerRadius: 0)
+                            .matchedGeometryEffect(id: "card\(gene.id)", in: namespace)
                         
                         Text(gene.title.uppercased())
                             .font(.largeTitle)
