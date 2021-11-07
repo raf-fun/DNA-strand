@@ -25,15 +25,6 @@ struct CardFullView: View {
                         CardView(gene: gene, namespace: namespace, cornerRadius: 0)
                             .matchedGeometryEffect(id: "card\(gene.id)", in: namespace)
                         
-                        Text(gene.title.uppercased())
-                            .font(.largeTitle)
-                            .foregroundColor(.primary.opacity(0.7))
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding([.horizontal, .bottom])
-                            .matchedGeometryEffect(id: "title\(gene.id)", in: namespace)
-                            .opacity(isVisible ? 1 : 0)
-                            .animation(.easeIn(duration: 0.5), value: isVisible)
-                        
                         Text(gene.firstParagraph ?? "")
                             .foregroundColor(.primary.opacity(0.7))
                             .frame(maxWidth: .infinity, alignment: .center)
