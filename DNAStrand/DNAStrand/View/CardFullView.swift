@@ -19,53 +19,44 @@ struct CardFullView: View {
         ZStack(alignment: .topTrailing) {
             Color(UIColor.systemGroupedBackground)
             
-            //            ScrollView(showsIndicators: false) {
-            //                VStack(alignment: .leading) {
-            //                    gene.thumbnail
-            //                        .resizable()
-            //                        .edgesIgnoringSafeArea(.top)
-            //                        .aspectRatio(contentMode: .fill)
-            //                        .frame(maxHeight: 300, alignment: .top)
-            //                        .mask {
-            //                            Rectangle()
-            GeometryReader { geometry in
-                ScrollView(showsIndicators: false) {
-                    VStack {
-                        Image("Insulin")
-                            .resizable()
-                        //                            .geneViewModifier(for: geneName)
-                        
-                        ForEach(1..<5) { _ in
-                            TitleParagraphDisplayView()
+            ScrollView(showsIndicators: false) {
+                VStack(alignment: .leading) {
+                    gene.thumbnail
+                        .resizable()
+                        .edgesIgnoringSafeArea(.top)
+                        .aspectRatio(contentMode: .fill)
+                        .frame(maxHeight: 300, alignment: .top)
+                        .mask {
+                            Rectangle()
+                            
                         }
                         .matchedGeometryEffect(id: "image\(gene.id)", in: namespace)
-                        
-                        Text(gene.title.uppercased())
-                            .font(.largeTitle)
-                            .foregroundColor(.primary.opacity(0.7))
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding([.horizontal, .bottom])
-                        
-                            .matchedGeometryEffect(id: "title\(gene.id)", in: namespace)
-                        
-                        Text(gene.extract)
-                            .foregroundColor(.primary.opacity(0.7))
-                            .frame(maxWidth: .infinity, alignment: .center)
-                            .multilineTextAlignment(.leading)
-                            .padding(.horizontal)
-                        
-                        Spacer()
-                    }
+                    
+                    Text(gene.title.uppercased())
+                        .font(.largeTitle)
+                        .foregroundColor(.primary.opacity(0.7))
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding([.horizontal, .bottom])
+                    
+                        .matchedGeometryEffect(id: "title\(gene.id)", in: namespace)
+                    
+                    Text(gene.extract)
+                        .foregroundColor(.primary.opacity(0.7))
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .multilineTextAlignment(.leading)
+                        .padding(.horizontal)
+                    
+                    Spacer()
                 }
-                
-                CloseButton(showDetails: $showDetails)
             }
-            .ignoresSafeArea()
-            .statusBar(hidden: true)
-            .background(
-                Rectangle().matchedGeometryEffect(id: "frame\(gene.id)", in: namespace)
-            )
+            
+            CloseButton(showDetails: $showDetails)
         }
+        .ignoresSafeArea()
+        .statusBar(hidden: true)
+        .background(
+            Rectangle().matchedGeometryEffect(id: "frame\(gene.id)", in: namespace)
+        )
     }
 }
 
