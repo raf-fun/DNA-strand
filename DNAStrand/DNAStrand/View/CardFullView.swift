@@ -19,33 +19,29 @@ struct CardFullView: View {
         ZStack(alignment: .topTrailing) {
             Color(UIColor.systemGroupedBackground)
             
-            //            ScrollView(showsIndicators: false) {
-            //                VStack(alignment: .leading) {
-            //                    gene.thumbnail
-            //                        .resizable()
-            //                        .edgesIgnoringSafeArea(.top)
-            //                        .aspectRatio(contentMode: .fill)
-            //                        .frame(maxHeight: 300, alignment: .top)
-            //                        .mask {
-            //                            Rectangle()
             GeometryReader { geometry in
                 ScrollView(showsIndicators: false) {
                     VStack {
-                        Image("Insulin")
+                        gene.thumbnail
                             .resizable()
-                        //                            .geneViewModifier(for: geneName)
+                            .edgesIgnoringSafeArea(.top)
+                            .aspectRatio(contentMode: .fill)
+                            .frame(height: 300, alignment: .top)
+                            .mask {
+                                Rectangle()
+                            }
+                        //.geneViewModifier(for: geneName)
                         
-                        ForEach(1..<5) { _ in
-                            TitleParagraphDisplayView()
-                        }
-                        .matchedGeometryEffect(id: "image\(gene.id)", in: namespace)
+                        //ForEach(1..<5) { _ in
+                        //    TitleParagraphDisplayView()
+                        //}
+                        //.matchedGeometryEffect(id: "image\(gene.id)", in: namespace)
                         
                         Text(gene.title.uppercased())
                             .font(.largeTitle)
                             .foregroundColor(.primary.opacity(0.7))
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding([.horizontal, .bottom])
-                        
                             .matchedGeometryEffect(id: "title\(gene.id)", in: namespace)
                         
                         Text(gene.extract)
@@ -63,7 +59,9 @@ struct CardFullView: View {
             .ignoresSafeArea()
             .statusBar(hidden: true)
             .background(
-                Rectangle().matchedGeometryEffect(id: "frame\(gene.id)", in: namespace)
+                Rectangle()
+                    .fill(Color(.systemGroupedBackground))
+                    .matchedGeometryEffect(id: "frame\(gene.id)", in: namespace)
             )
         }
     }

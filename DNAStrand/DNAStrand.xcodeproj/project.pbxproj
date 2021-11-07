@@ -79,6 +79,11 @@
 				38E870BF2736483900E857B1 /* CardFullView.swift */,
 				916D76732736E9C200A4AEF8 /* HomeView.swift */,
 				913586542737685F00AAA603 /* CreditsView.swift */,
+				9D328F1427373122004E7903 /* GeneDetailView.swift */,
+				9D328F0F27373122004E7903 /* GeneView.swift */,
+				9D328F0927373122004E7903 /* GeneViewLoader.swift */,
+				9D328F1227373122004E7903 /* GeneWikipediaWebView.swift */,
+				9D328F1327373122004E7903 /* MainView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -106,6 +111,7 @@
 		9D328F0527373121004E7903 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				D20296A42737939B00A10358 /* Animation-Extension.swift */,
 				9D328F0627373121004E7903 /* HTMLAttributedString+String.swift */,
 				9D328F0727373121004E7903 /* Bundle+LoadAndDecode.swift */,
 			);
@@ -140,15 +146,9 @@
 		D22C6B992734FE6500303F44 /* DNAStrand */ = {
 			isa = PBXGroup;
 			children = (
-				D20296A42737939B00A10358 /* Animation-Extension.swift */,
-				913586532737679200AAA603 /* Model */,
 				D22C6B9A2734FE6500303F44 /* DNAStrandApp.swift */,
+				913586532737679200AAA603 /* Model */,
 				3864B3BA27359EBE005CE6B3 /* View */,
-				9D328F1427373122004E7903 /* GeneDetailView.swift */,
-				9D328F0F27373122004E7903 /* GeneView.swift */,
-				9D328F0927373122004E7903 /* GeneViewLoader.swift */,
-				9D328F1227373122004E7903 /* GeneWikipediaWebView.swift */,
-				9D328F1327373122004E7903 /* MainView.swift */,
 				9D328F0527373121004E7903 /* Extensions */,
 				9D328F1027373122004E7903 /* NetworkManager */,
 				9D328F0327373121004E7903 /* ViewModel */,

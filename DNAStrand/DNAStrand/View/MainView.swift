@@ -10,10 +10,13 @@ import SwiftUI
 struct MainView: View {
     @StateObject var geneStore = GeneViewModel()
     var body: some View {
-            NavigationView{
-                GeneViewLoader(geneVM: geneStore, showGene: .Insulin)
-                    .navigationTitle("Most Popular Genes")
-            }
+        NavigationView{
+            GeneViewLoader(geneVM: geneStore, showGene: .Insulin)
+                .navigationTitle("Most Popular Genes")
+        }
+        .task {
+            await geneStore.getGene()
+        }
     }
 }
 

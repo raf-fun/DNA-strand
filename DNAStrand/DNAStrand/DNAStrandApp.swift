@@ -11,8 +11,8 @@ import SwiftUI
 struct DNAStrandApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView()
-            //MainView()
+//            HomeView()
+            MainView()
         }
     }
     

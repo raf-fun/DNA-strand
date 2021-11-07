@@ -8,15 +8,19 @@
 import SwiftUI
 
 struct GeneDetailView: View {
+    
     @Environment(\.dismiss) var dismiss
+    
     let gene: WikiAPIResult
+    
     var geneData: WikiData {
         gene.query.pages.resultData
     }
+    
     var body: some View {
-        ZStack(alignment:.top){
-            ScrollView{
-                VStack(alignment:.leading, spacing: 0){
+        ZStack(alignment:.top) {
+            ScrollView {
+                VStack(alignment:.leading, spacing: 0) {
                     if let image = geneData.thumbnail {
                         AsyncImage(url: URL(string: image.formattedImageLink(width: 500))) { image in
                             image
@@ -25,20 +29,20 @@ struct GeneDetailView: View {
                         } placeholder: {
                             ProgressView()
                         }
-                        .overlay(
-                            VStack{
-                                Button(action: {dismiss()}){
-                                Image(systemName: "xmark")
+                        .overlay (
+                            VStack {
+                                Button(action: {dismiss()}) {
+                                    Image(systemName: "xmark")
                                 }.tint(.black)
-                                .padding(8)
-                                .background(.ultraThinMaterial)
-                                .clipShape(Circle())
-                                .padding(24)
-                                .position(x: 40, y: 60)
+                                    .padding(8)
+                                    .background(.ultraThinMaterial)
+                                    .clipShape(Circle())
+                                    .padding(24)
+                                    .position(x: 40, y: 60)
                                 Spacer()
                                 HStack{
                                     Spacer()
-                                Text(geneData.title)
+                                    Text(geneData.title)
                                         .bold()
                                         .font(.title2)
                                         .padding()
@@ -55,8 +59,10 @@ struct GeneDetailView: View {
                     Spacer()
                 }
             }
-        }.edgesIgnoringSafeArea(.top)
+        }
+        .edgesIgnoringSafeArea(.top)
         .navigationBarHidden(true)
+        
     }
 }
 
