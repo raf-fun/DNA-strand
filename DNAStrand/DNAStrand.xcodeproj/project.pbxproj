@@ -9,7 +9,10 @@
 /* Begin PBXBuildFile section */
 		3864B3BC27359F4F005CE6B3 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864B3BB27359F4F005CE6B3 /* CardView.swift */; };
 		38E870C02736483900E857B1 /* CardFullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E870BF2736483900E857B1 /* CardFullView.swift */; };
-		916D76722736E3A200A4AEF8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916D76712736E3A200A4AEF8 /* HomeView.swift */; };
+		913586552737685F00AAA603 /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913586542737685F00AAA603 /* CreditsView.swift */; };
+		91358658273770CA00AAA603 /* Animation-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91358657273770CA00AAA603 /* Animation-Extension.swift */; };
+		916D76742736E9C200A4AEF8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916D76732736E9C200A4AEF8 /* HomeView.swift */; };
+		916D76762736FCBC00A4AEF8 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916D76752736FCBC00A4AEF8 /* Model.swift */; };
 		D22C6B9B2734FE6500303F44 /* DNAStrandApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22C6B9A2734FE6500303F44 /* DNAStrandApp.swift */; };
 		D22C6B9D2734FE6500303F44 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22C6B9C2734FE6500303F44 /* ContentView.swift */; };
 		D22C6B9F2734FE6700303F44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D22C6B9E2734FE6700303F44 /* Assets.xcassets */; };
@@ -23,7 +26,10 @@
 /* Begin PBXFileReference section */
 		3864B3BB27359F4F005CE6B3 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		38E870BF2736483900E857B1 /* CardFullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFullView.swift; sourceTree = "<group>"; };
-		916D76712736E3A200A4AEF8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		913586542737685F00AAA603 /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
+		91358657273770CA00AAA603 /* Animation-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animation-Extension.swift"; sourceTree = "<group>"; };
+		916D76732736E9C200A4AEF8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		916D76752736FCBC00A4AEF8 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		D22C6B972734FE6500303F44 /* DNAStrand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DNAStrand.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D22C6B9A2734FE6500303F44 /* DNAStrandApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNAStrandApp.swift; sourceTree = "<group>"; };
 		D22C6B9C2734FE6500303F44 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,9 +58,26 @@
 			children = (
 				3864B3BB27359F4F005CE6B3 /* CardView.swift */,
 				38E870BF2736483900E857B1 /* CardFullView.swift */,
-				916D76712736E3A200A4AEF8 /* HomeView.swift */,
+				916D76732736E9C200A4AEF8 /* HomeView.swift */,
+				913586542737685F00AAA603 /* CreditsView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		913586532737679200AAA603 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				916D76752736FCBC00A4AEF8 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		91358656273770A200AAA603 /* Estensions */ = {
+			isa = PBXGroup;
+			children = (
+				91358657273770CA00AAA603 /* Animation-Extension.swift */,
+			);
+			name = Estensions;
 			sourceTree = "<group>";
 		};
 		D22C6B8E2734FE6500303F44 = {
@@ -78,6 +101,8 @@
 		D22C6B992734FE6500303F44 /* DNAStrand */ = {
 			isa = PBXGroup;
 			children = (
+				91358656273770A200AAA603 /* Estensions */,
+				913586532737679200AAA603 /* Model */,
 				3864B3BA27359EBE005CE6B3 /* View */,
 				D22C6B9A2734FE6500303F44 /* DNAStrandApp.swift */,
 				D22C6B9C2734FE6500303F44 /* ContentView.swift */,
@@ -189,11 +214,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				916D76762736FCBC00A4AEF8 /* Model.swift in Sources */,
 				D22C6B9D2734FE6500303F44 /* ContentView.swift in Sources */,
-				916D76722736E3A200A4AEF8 /* HomeView.swift in Sources */,
+				91358658273770CA00AAA603 /* Animation-Extension.swift in Sources */,
 				38E870C02736483900E857B1 /* CardFullView.swift in Sources */,
 				D22C6BB32735168E00303F44 /* AppEnvironment.swift in Sources */,
 				D22C6BAE273512C200303F44 /* AppError+Extensions.swift in Sources */,
+				916D76742736E9C200A4AEF8 /* HomeView.swift in Sources */,
+				913586552737685F00AAA603 /* CreditsView.swift in Sources */,
 				D22C6B9B2734FE6500303F44 /* DNAStrandApp.swift in Sources */,
 				3864B3BC27359F4F005CE6B3 /* CardView.swift in Sources */,
 			);
@@ -326,6 +354,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DNAStrand/Preview Content\"";
+				DEVELOPMENT_TEAM = KBBTQSH263;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -355,6 +384,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DNAStrand/Preview Content\"";
+				DEVELOPMENT_TEAM = KBBTQSH263;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

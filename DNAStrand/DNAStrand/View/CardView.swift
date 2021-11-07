@@ -8,38 +8,58 @@
 import SwiftUI
 
 struct CardView: View {
-    var DisplayText: String
-    var DisplayTextColor: Color
-    var Background: Image
+    
+    var gene: WikiData
+    var namespace: Namespace.ID
+    
     var body: some View {
-        ZStack {
-            Background
-                .resizable()
-                .scaledToFit()
-                .cornerRadius(15)
+        VStack(alignment: .leading, spacing: 8) {
+            Spacer()
             
-            VStack {
-                Text(DisplayText)
-                    .bold()
-                    .foregroundColor(DisplayTextColor)
-                    .shadow(color: .black, radius: 1)
-            }
-            .padding()
-            .multilineTextAlignment(.center)
+            Text(gene.title)
+                .bold()
+                .foregroundColor(.white)
+                .frame(maxWidth: .infinity, alignment: .bottomLeading)
+                .shadow(color: .black, radius: 1)
+                .matchedGeometryEffect(id: "title\(gene.id)", in: namespace)
+            
         }
-        .shadow(radius: 10)
+        .padding(.horizontal, 20)
+        .padding(.vertical, 40)
+        .frame(maxWidth: .infinity)
+        .frame(height: 300)
+        .background(
+            gene.thumbnail
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(maxWidth: .infinity)
+                .frame(height: 300)
+                .disabled(true)
+                .matchedGeometryEffect(id: "image\(gene.id)", in: namespace)
+                .matchedGeometryEffect(id: "frame\(gene.id)", in: namespace)
+        )
+        .mask(
+            RoundedRectangle(cornerRadius: 30)
+        )
     }
-    
-    static var example: CardView {
-        CardView(DisplayText: "Name of Gene", DisplayTextColor: .green,
-                 Background: Image("Insulin"))
-    }
-    
+  
 }
 
+#if DEBUG
 struct CardView_Previews: PreviewProvider {
+    @Namespace static var namespace
+    
     static var previews: some View {
-        CardView(DisplayText: "Name of Gene", DisplayTextColor: .green,
-                 Background: Image("Insulin"))
+        Group {
+            CardView(gene: WikiData.preview, namespace: namespace)
+                .padding()
+            CardView(gene: WikiData.preview, namespace: namespace)
+                .preferredColorScheme(.dark)
+                .padding()
+        }
     }
 }
+#endif
+
+
+
