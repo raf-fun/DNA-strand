@@ -23,11 +23,7 @@ struct HomeView: View {
             
             ScrollView {
                 HStack {
-                    Text("Ingeneious")
-                        .bold()
-                        .font(.largeTitle)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding()
+                    TitleView()
                     
                     Spacer()
                     
