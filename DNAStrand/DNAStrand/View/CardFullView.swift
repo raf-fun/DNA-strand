@@ -44,7 +44,7 @@ struct CardFullView: View {
                             }.buttonStyle(.borderedProminent)
                             Spacer()
                         }.sheet(item: $geneURL){gene in
-                            GeneWikipediaWebView(url: gene.wikipediaLink)
+                            GeneWebView(url: gene.wikipediaLink)
                         }
                         Spacer()
                     }
