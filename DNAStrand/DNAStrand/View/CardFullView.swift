@@ -14,6 +14,7 @@ struct CardFullView: View {
     
     @Binding var showDetails: Bool
     @State private var isVisible: Bool = false
+    @State var geneURL: WikiData? = nil
     
     var body: some View {
         ZStack(alignment: .topTrailing) {
@@ -33,13 +34,27 @@ struct CardFullView: View {
                             .opacity(isVisible ? 1 : 0)
                             .animation(.easeIn(duration: 0.5), value: isVisible)
                         
-                        Text(gene.extract)
+                        Text(gene.firstParagraph ?? "")
                             .foregroundColor(.primary.opacity(0.7))
                             .frame(maxWidth: .infinity, alignment: .center)
                             .multilineTextAlignment(.leading)
                             .padding(.horizontal)
                             .opacity(isVisible ? 1 : 0)
                             .animation(.easeIn(duration: 0.45).delay(0.1), value: isVisible)
+                        HStack {
+                            Spacer()
+                            Button(action: {
+                                withAnimation {
+                                    geneURL = gene
+                                }
+                            }){
+                                Label("Show me more", systemImage: "safari")
+                                    .padding(8)
+                            }.buttonStyle(.borderedProminent)
+                            Spacer()
+                        }.sheet(item: $geneURL){gene in
+                            GeneWikipediaWebView(url: gene.wikipediaLink)
+                        }
                         Spacer()
                     }
                 }
