@@ -6,17 +6,13 @@
 //
 
 import SwiftUI
-import DNAStrandService
 
 @main
 struct DNAStrandApp: App {
-    
-    var service: DNAStrandService = .init(base: "")
-    
     var body: some Scene {
         WindowGroup {
             HomeView()
-                .environment(\.service, service)
+            //MainView()
         }
     }
     

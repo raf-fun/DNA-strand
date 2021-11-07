@@ -12,16 +12,16 @@ struct HomeView: View {
     
     @State private var showDetails = false
     @State private var showCredits = false
-    @State private var selectedGeneCard: WikiData?
+    @State private var selectedGeneCard: WikiDataPreview?
     
-    var allGenes: [WikiData] = WikiData.geneDataExample
+    var allGenes: [WikiDataPreview] = WikiDataPreview.geneDataExample
     
     var body: some View {
         ZStack {
             Color(UIColor.systemGroupedBackground).ignoresSafeArea()
             
             if showDetails {
-                CardFullView(gene: selectedGeneCard ?? WikiData.preview, namespace: namespace, showDetails: $showDetails)
+                CardFullView(gene: selectedGeneCard ?? WikiDataPreview.preview, namespace: namespace, showDetails: $showDetails, geneName: "")
             }
             else {
                 ScrollView {

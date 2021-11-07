@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CardView: View {
     
-    var gene: WikiData
+    var gene: WikiDataPreview
     var namespace: Namespace.ID
     
     var body: some View {
@@ -51,9 +51,9 @@ struct CardView_Previews: PreviewProvider {
     
     static var previews: some View {
         Group {
-            CardView(gene: WikiData.preview, namespace: namespace)
+            CardView(gene: WikiDataPreview.preview, namespace: namespace)
                 .padding()
-            CardView(gene: WikiData.preview, namespace: namespace)
+            CardView(gene: WikiDataPreview.preview, namespace: namespace)
                 .preferredColorScheme(.dark)
                 .padding()
         }
