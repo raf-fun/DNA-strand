@@ -9,27 +9,62 @@
 /* Begin PBXBuildFile section */
 		3864B3BC27359F4F005CE6B3 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864B3BB27359F4F005CE6B3 /* CardView.swift */; };
 		38E870C02736483900E857B1 /* CardFullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E870BF2736483900E857B1 /* CardFullView.swift */; };
+		913586552737685F00AAA603 /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913586542737685F00AAA603 /* CreditsView.swift */; };
+		916D76742736E9C200A4AEF8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916D76732736E9C200A4AEF8 /* HomeView.swift */; };
+		916D76762736FCBC00A4AEF8 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916D76752736FCBC00A4AEF8 /* Model.swift */; };
+		9D328F02273730E2004E7903 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 9D328F01273730E2004E7903 /* SwiftSoup */; };
+		9D328F1527373122004E7903 /* GeneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D328F0427373121004E7903 /* GeneViewModel.swift */; };
+		9D328F1627373122004E7903 /* HTMLAttributedString+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D328F0627373121004E7903 /* HTMLAttributedString+String.swift */; };
+		9D328F1727373122004E7903 /* Bundle+LoadAndDecode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D328F0727373121004E7903 /* Bundle+LoadAndDecode.swift */; };
+		9D328F1827373122004E7903 /* api-result.json in Resources */ = {isa = PBXBuildFile; fileRef = 9D328F0827373122004E7903 /* api-result.json */; };
+		9D328F1927373122004E7903 /* GeneViewLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D328F0927373122004E7903 /* GeneViewLoader.swift */; };
+		9D328F1E27373122004E7903 /* GeneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D328F0F27373122004E7903 /* GeneView.swift */; };
+		9D328F1F27373122004E7903 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D328F1127373122004E7903 /* NetworkManager.swift */; };
+		9D328F2027373122004E7903 /* GeneWikipediaWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D328F1227373122004E7903 /* GeneWikipediaWebView.swift */; };
+		9D328F2127373122004E7903 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D328F1327373122004E7903 /* MainView.swift */; };
+		9D328F2227373122004E7903 /* GeneDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D328F1427373122004E7903 /* GeneDetailView.swift */; };
+		D20296A52737939B00A10358 /* Animation-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20296A42737939B00A10358 /* Animation-Extension.swift */; };
+		D20296AA273793DD00A10358 /* WikiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20296A6273793DD00A10358 /* WikiData.swift */; };
+		D20296AB273793DD00A10358 /* WikiResultAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20296A7273793DD00A10358 /* WikiResultAPI.swift */; };
+		D20296AC273793DD00A10358 /* DataFetchPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20296A8273793DD00A10358 /* DataFetchPhase.swift */; };
+		D20296AD273793DD00A10358 /* Gene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20296A9273793DD00A10358 /* Gene.swift */; };
+		D20296AF2737AFF500A10358 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20296AE2737AFF500A10358 /* AppView.swift */; };
+		D20296B22737BDE300A10358 /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = D20296B12737BDE300A10358 /* CachedAsyncImage */; };
+		D20296B42737BE8F00A10358 /* URLSession+ImageChach.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20296B32737BE8F00A10358 /* URLSession+ImageChach.swift */; };
+		D20296B62737C5F900A10358 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20296B52737C5F900A10358 /* UIColor+Extension.swift */; };
 		D22C6B9B2734FE6500303F44 /* DNAStrandApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22C6B9A2734FE6500303F44 /* DNAStrandApp.swift */; };
-		D22C6B9D2734FE6500303F44 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22C6B9C2734FE6500303F44 /* ContentView.swift */; };
 		D22C6B9F2734FE6700303F44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D22C6B9E2734FE6700303F44 /* Assets.xcassets */; };
 		D22C6BA22734FE6700303F44 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D22C6BA12734FE6700303F44 /* Preview Assets.xcassets */; };
-		D22C6BAB2735037500303F44 /* AppUtilities in Frameworks */ = {isa = PBXBuildFile; productRef = D22C6BAA2735037500303F44 /* AppUtilities */; };
-		D22C6BAE273512C200303F44 /* AppError+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22C6BAD273512C200303F44 /* AppError+Extensions.swift */; };
-		D22C6BB12735152A00303F44 /* DNAStrandService in Frameworks */ = {isa = PBXBuildFile; productRef = D22C6BB02735152A00303F44 /* DNAStrandService */; };
-		D22C6BB32735168E00303F44 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22C6BB22735168E00303F44 /* AppEnvironment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3864B3BB27359F4F005CE6B3 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		38E870BF2736483900E857B1 /* CardFullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFullView.swift; sourceTree = "<group>"; };
+		913586542737685F00AAA603 /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
+		916D76732736E9C200A4AEF8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		916D76752736FCBC00A4AEF8 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		9D328F0427373121004E7903 /* GeneViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneViewModel.swift; sourceTree = "<group>"; };
+		9D328F0627373121004E7903 /* HTMLAttributedString+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HTMLAttributedString+String.swift"; sourceTree = "<group>"; };
+		9D328F0727373121004E7903 /* Bundle+LoadAndDecode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+LoadAndDecode.swift"; sourceTree = "<group>"; };
+		9D328F0827373122004E7903 /* api-result.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "api-result.json"; sourceTree = "<group>"; };
+		9D328F0927373122004E7903 /* GeneViewLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneViewLoader.swift; sourceTree = "<group>"; };
+		9D328F0F27373122004E7903 /* GeneView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneView.swift; sourceTree = "<group>"; };
+		9D328F1127373122004E7903 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		9D328F1227373122004E7903 /* GeneWikipediaWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneWikipediaWebView.swift; sourceTree = "<group>"; };
+		9D328F1327373122004E7903 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		9D328F1427373122004E7903 /* GeneDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneDetailView.swift; sourceTree = "<group>"; };
+		D20296A42737939B00A10358 /* Animation-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Animation-Extension.swift"; sourceTree = "<group>"; };
+		D20296A6273793DD00A10358 /* WikiData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiData.swift; sourceTree = "<group>"; };
+		D20296A7273793DD00A10358 /* WikiResultAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiResultAPI.swift; sourceTree = "<group>"; };
+		D20296A8273793DD00A10358 /* DataFetchPhase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFetchPhase.swift; sourceTree = "<group>"; };
+		D20296A9273793DD00A10358 /* Gene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gene.swift; sourceTree = "<group>"; };
+		D20296AE2737AFF500A10358 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		D20296B32737BE8F00A10358 /* URLSession+ImageChach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+ImageChach.swift"; sourceTree = "<group>"; };
+		D20296B52737C5F900A10358 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		D22C6B972734FE6500303F44 /* DNAStrand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DNAStrand.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D22C6B9A2734FE6500303F44 /* DNAStrandApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNAStrandApp.swift; sourceTree = "<group>"; };
-		D22C6B9C2734FE6500303F44 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D22C6B9E2734FE6700303F44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D22C6BA12734FE6700303F44 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		D22C6BA82734FF6700303F44 /* DNAStrandService */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DNAStrandService; path = ../DNAStrandService; sourceTree = "<group>"; };
-		D22C6BAD273512C200303F44 /* AppError+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppError+Extensions.swift"; sourceTree = "<group>"; };
-		D22C6BB22735168E00303F44 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,8 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D22C6BB12735152A00303F44 /* DNAStrandService in Frameworks */,
-				D22C6BAB2735037500303F44 /* AppUtilities in Frameworks */,
+				9D328F02273730E2004E7903 /* SwiftSoup in Frameworks */,
+				D20296B22737BDE300A10358 /* CachedAsyncImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,16 +83,63 @@
 		3864B3BA27359EBE005CE6B3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D20296AE2737AFF500A10358 /* AppView.swift */,
 				3864B3BB27359F4F005CE6B3 /* CardView.swift */,
 				38E870BF2736483900E857B1 /* CardFullView.swift */,
+				916D76732736E9C200A4AEF8 /* HomeView.swift */,
+				9D328F1327373122004E7903 /* MainView.swift */,
+				913586542737685F00AAA603 /* CreditsView.swift */,
+				9D328F1427373122004E7903 /* GeneDetailView.swift */,
+				9D328F0F27373122004E7903 /* GeneView.swift */,
+				9D328F0927373122004E7903 /* GeneViewLoader.swift */,
+				9D328F1227373122004E7903 /* GeneWikipediaWebView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		913586532737679200AAA603 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D20296A8273793DD00A10358 /* DataFetchPhase.swift */,
+				D20296A9273793DD00A10358 /* Gene.swift */,
+				D20296A6273793DD00A10358 /* WikiData.swift */,
+				D20296A7273793DD00A10358 /* WikiResultAPI.swift */,
+				916D76752736FCBC00A4AEF8 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9D328F0327373121004E7903 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9D328F0427373121004E7903 /* GeneViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9D328F0527373121004E7903 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D20296A42737939B00A10358 /* Animation-Extension.swift */,
+				9D328F0627373121004E7903 /* HTMLAttributedString+String.swift */,
+				9D328F0727373121004E7903 /* Bundle+LoadAndDecode.swift */,
+				D20296B32737BE8F00A10358 /* URLSession+ImageChach.swift */,
+				D20296B52737C5F900A10358 /* UIColor+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9D328F1027373122004E7903 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				9D328F1127373122004E7903 /* NetworkManager.swift */,
+			);
+			path = NetworkManager;
 			sourceTree = "<group>";
 		};
 		D22C6B8E2734FE6500303F44 = {
 			isa = PBXGroup;
 			children = (
-				D22C6BA82734FF6700303F44 /* DNAStrandService */,
 				D22C6B992734FE6500303F44 /* DNAStrand */,
 				D22C6B982734FE6500303F44 /* Products */,
 				D22C6BAF2735152A00303F44 /* Frameworks */,
@@ -75,11 +157,14 @@
 		D22C6B992734FE6500303F44 /* DNAStrand */ = {
 			isa = PBXGroup;
 			children = (
-				3864B3BA27359EBE005CE6B3 /* View */,
 				D22C6B9A2734FE6500303F44 /* DNAStrandApp.swift */,
-				D22C6B9C2734FE6500303F44 /* ContentView.swift */,
-				D22C6BAC273512B600303F44 /* Utilities */,
+				913586532737679200AAA603 /* Model */,
+				3864B3BA27359EBE005CE6B3 /* View */,
+				9D328F0527373121004E7903 /* Extensions */,
+				9D328F1027373122004E7903 /* NetworkManager */,
+				9D328F0327373121004E7903 /* ViewModel */,
 				D22C6B9E2734FE6700303F44 /* Assets.xcassets */,
+				9D328F0827373122004E7903 /* api-result.json */,
 				D22C6BA02734FE6700303F44 /* Preview Content */,
 			);
 			path = DNAStrand;
@@ -91,15 +176,6 @@
 				D22C6BA12734FE6700303F44 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		D22C6BAC273512B600303F44 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				D22C6BAD273512C200303F44 /* AppError+Extensions.swift */,
-				D22C6BB22735168E00303F44 /* AppEnvironment.swift */,
-			);
-			path = Utilities;
 			sourceTree = "<group>";
 		};
 		D22C6BAF2735152A00303F44 /* Frameworks */ = {
@@ -126,8 +202,8 @@
 			);
 			name = DNAStrand;
 			packageProductDependencies = (
-				D22C6BAA2735037500303F44 /* AppUtilities */,
-				D22C6BB02735152A00303F44 /* DNAStrandService */,
+				9D328F01273730E2004E7903 /* SwiftSoup */,
+				D20296B12737BDE300A10358 /* CachedAsyncImage */,
 			);
 			productName = DNAStrand;
 			productReference = D22C6B972734FE6500303F44 /* DNAStrand.app */;
@@ -158,7 +234,8 @@
 			);
 			mainGroup = D22C6B8E2734FE6500303F44;
 			packageReferences = (
-				D22C6BA92735037500303F44 /* XCRemoteSwiftPackageReference "AppUtilities" */,
+				9D328F00273730E2004E7903 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+				D20296B02737BDE300A10358 /* XCRemoteSwiftPackageReference "SwiftUI-CachedAsyncImage" */,
 			);
 			productRefGroup = D22C6B982734FE6500303F44 /* Products */;
 			projectDirPath = "";
@@ -174,6 +251,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D328F1827373122004E7903 /* api-result.json in Resources */,
 				D22C6BA22734FE6700303F44 /* Preview Assets.xcassets in Resources */,
 				D22C6B9F2734FE6700303F44 /* Assets.xcassets in Resources */,
 			);
@@ -186,12 +264,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D22C6B9D2734FE6500303F44 /* ContentView.swift in Sources */,
+				916D76762736FCBC00A4AEF8 /* Model.swift in Sources */,
 				38E870C02736483900E857B1 /* CardFullView.swift in Sources */,
-				D22C6BB32735168E00303F44 /* AppEnvironment.swift in Sources */,
-				D22C6BAE273512C200303F44 /* AppError+Extensions.swift in Sources */,
+				916D76742736E9C200A4AEF8 /* HomeView.swift in Sources */,
+				913586552737685F00AAA603 /* CreditsView.swift in Sources */,
+				D20296AF2737AFF500A10358 /* AppView.swift in Sources */,
+				9D328F2227373122004E7903 /* GeneDetailView.swift in Sources */,
+				D20296AA273793DD00A10358 /* WikiData.swift in Sources */,
+				D20296A52737939B00A10358 /* Animation-Extension.swift in Sources */,
+				9D328F2027373122004E7903 /* GeneWikipediaWebView.swift in Sources */,
+				9D328F1527373122004E7903 /* GeneViewModel.swift in Sources */,
+				9D328F1E27373122004E7903 /* GeneView.swift in Sources */,
+				D20296AD273793DD00A10358 /* Gene.swift in Sources */,
+				9D328F2127373122004E7903 /* MainView.swift in Sources */,
+				D20296B42737BE8F00A10358 /* URLSession+ImageChach.swift in Sources */,
+				D20296AC273793DD00A10358 /* DataFetchPhase.swift in Sources */,
+				D20296B62737C5F900A10358 /* UIColor+Extension.swift in Sources */,
+				38E870C02736483900E857B1 /* CardFullView.swift in Sources */,
+				D20296AB273793DD00A10358 /* WikiResultAPI.swift in Sources */,
+				9D328F1627373122004E7903 /* HTMLAttributedString+String.swift in Sources */,
+				9D328F1F27373122004E7903 /* NetworkManager.swift in Sources */,
+				9D328F1927373122004E7903 /* GeneViewLoader.swift in Sources */,
 				D22C6B9B2734FE6500303F44 /* DNAStrandApp.swift in Sources */,
 				3864B3BC27359F4F005CE6B3 /* CardView.swift in Sources */,
+				9D328F1727373122004E7903 /* Bundle+LoadAndDecode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +418,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DNAStrand/Preview Content\"";
+				DEVELOPMENT_TEAM = KBBTQSH263;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -351,6 +448,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DNAStrand/Preview Content\"";
+				DEVELOPMENT_TEAM = KBBTQSH263;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -396,25 +494,34 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		D22C6BA92735037500303F44 /* XCRemoteSwiftPackageReference "AppUtilities" */ = {
+		9D328F00273730E2004E7903 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/NeilsUltimateLab/AppUtilities.git";
+			repositoryURL = "https://github.com/scinfu/SwiftSoup.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		D20296B02737BDE300A10358 /* XCRemoteSwiftPackageReference "SwiftUI-CachedAsyncImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lorenzofiamingo/SwiftUI-CachedAsyncImage";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.1.5;
+				minimumVersion = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D22C6BAA2735037500303F44 /* AppUtilities */ = {
+		9D328F01273730E2004E7903 /* SwiftSoup */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D22C6BA92735037500303F44 /* XCRemoteSwiftPackageReference "AppUtilities" */;
-			productName = AppUtilities;
+			package = 9D328F00273730E2004E7903 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
 		};
-		D22C6BB02735152A00303F44 /* DNAStrandService */ = {
+		D20296B12737BDE300A10358 /* CachedAsyncImage */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = DNAStrandService;
+			package = D20296B02737BDE300A10358 /* XCRemoteSwiftPackageReference "SwiftUI-CachedAsyncImage" */;
+			productName = CachedAsyncImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

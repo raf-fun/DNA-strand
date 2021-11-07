@@ -6,35 +6,77 @@
 //
 
 import SwiftUI
+import CachedAsyncImage
 
 struct CardView: View {
-    var DisplayText: String
-    var DisplayTextColor: Color
-    var Background: Image
-    var body: some View {
-        ZStack {
-            Background
-                .resizable()
-                .scaledToFit()
-                .cornerRadius(15)
-            
-            VStack {
-                Text(DisplayText)
-                    .bold()
-                    .foregroundColor(DisplayTextColor)
-                    .shadow(color: .black, radius: 1)
-            }
-            .padding()
-            .multilineTextAlignment(.center)
-        }
-        .shadow(radius: 10)
-    }
     
+    var gene: WikiData
+    var namespace: Namespace.ID
+    var cornerRadius: CGFloat = 30
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Spacer()
+            HStack {
+                Text(gene.title)
+                    .font(.title)
+                    .foregroundStyle(LinearGradient(colors: [Color(.darkGreen), Color.accentColor], startPoint: .leading, endPoint: .trailing))
+                    .padding(.vertical, 6)
+                    .padding(.horizontal, 12)
+                    .background(
+                        .regularMaterial
+                    )
+                    .cornerRadius(12)
+                Spacer()
+            }
+        }
+        .padding(.horizontal, 20)
+        .padding(.vertical, 20)
+        .frame(maxWidth: .infinity)
+        .frame(height: 300)
+        .background(
+            Group {
+                if let urlString = gene.thumbnail?.formattedImageLink(width: 500) {
+                    CachedAsyncImage(url: URL(string: urlString)) { image in
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 300)
+                            .disabled(true)
+                            .overlay(
+                                LinearGradient(colors: [Color.gray.opacity(0), Color.black.opacity(0.2)], startPoint: .top, endPoint: .bottom)
+                            )
+                    } placeholder: {
+                        ProgressView()
+                    }
+                } else {
+                    Color.gray.opacity(0.1)
+                }
+            }
+        )
+        .mask(
+            RoundedRectangle(cornerRadius: cornerRadius)
+        )
+    }
+  
 }
 
+#if DEBUG
 struct CardView_Previews: PreviewProvider {
+    @Namespace static var namespace
+    
     static var previews: some View {
-        CardView(DisplayText: "Name of Gene", DisplayTextColor: .green,
-                 Background: Image("Insulin"))
+        Group {
+            //CardView(gene: WikiData.preview, namespace: namespace)
+            //    .padding()
+            //CardView(gene: WikiData.preview, namespace: namespace)
+            //    .preferredColorScheme(.dark)
+            //    .padding()
+        }
     }
 }
+#endif
+
+
+
