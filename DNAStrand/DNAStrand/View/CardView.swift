@@ -19,6 +19,7 @@ struct CardView: View {
             Spacer()
             HStack {
                 Text(gene.title)
+                    .bold()
                     .font(.title)
                     .foregroundStyle(LinearGradient(colors: [Color(.darkGreen), Color.accentColor], startPoint: .leading, endPoint: .trailing))
                     .padding(.vertical, 6)
@@ -47,6 +48,7 @@ struct CardView: View {
                             .overlay(
                                 LinearGradient(colors: [Color.gray.opacity(0), Color.black.opacity(0.2)], startPoint: .top, endPoint: .bottom)
                             )
+                            .background(Color.white)
                     } placeholder: {
                         ProgressView()
                     }

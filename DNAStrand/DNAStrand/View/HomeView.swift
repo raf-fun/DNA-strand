@@ -20,10 +20,12 @@ struct HomeView: View {
     var body: some View {
         ZStack {
             Color(UIColor.systemGroupedBackground).ignoresSafeArea()
+            DigitalRain()
             
             ScrollView {
                 HStack {
                     Text("Ingeneious")
+                        .bold()
                         .font(.largeTitle)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
@@ -55,8 +57,11 @@ struct HomeView: View {
     var cards: some View {
         switch geneStore.dataPhase {
         case .empty:
-            ProgressView()
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            VStack{
+                Spacer(minLength: 250)
+                DNAShapeRetryLoaderView()
+                Spacer()
+            }
         case .success(let genes):
             ForEach(genes, id: \.wikidata.title) { gene in
                 CardView(gene: gene.wikidata, namespace: namespace)

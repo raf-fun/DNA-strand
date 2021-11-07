@@ -8,10 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		3864B3BC27359F4F005CE6B3 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864B3BB27359F4F005CE6B3 /* CardView.swift */; };
-		38C1D2E62738520F00DBB070 /* GeneWikipediaWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C1D2E52738520F00DBB070 /* GeneWikipediaWebView.swift */; };
 		38E870C02736483900E857B1 /* CardFullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E870BF2736483900E857B1 /* CardFullView.swift */; };
 		913586552737685F00AAA603 /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913586542737685F00AAA603 /* CreditsView.swift */; };
 		916D76742736E9C200A4AEF8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916D76732736E9C200A4AEF8 /* HomeView.swift */; };
+		9D0005DF273855B400F6E8AE /* GeneWikipediaWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0005DE273855B400F6E8AE /* GeneWikipediaWebView.swift */; };
+		9D0005E3273855C900F6E8AE /* DNAShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0005E0273855C900F6E8AE /* DNAShape.swift */; };
+		9D0005E4273855C900F6E8AE /* DNAShapeRetryLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0005E1273855C900F6E8AE /* DNAShapeRetryLoaderView.swift */; };
+		9D0005E5273855C900F6E8AE /* DigitalRain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0005E2273855C900F6E8AE /* DigitalRain.swift */; };
 		9D328F02273730E2004E7903 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 9D328F01273730E2004E7903 /* SwiftSoup */; };
 		9D328F1527373122004E7903 /* GeneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D328F0427373121004E7903 /* GeneViewModel.swift */; };
 		9D328F1727373122004E7903 /* Bundle+LoadAndDecode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D328F0727373121004E7903 /* Bundle+LoadAndDecode.swift */; };
@@ -32,10 +35,13 @@
 
 /* Begin PBXFileReference section */
 		3864B3BB27359F4F005CE6B3 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		38C1D2E52738520F00DBB070 /* GeneWikipediaWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GeneWikipediaWebView.swift; path = ../../../../../../.Trash/GeneWikipediaWebView.swift; sourceTree = "<group>"; };
 		38E870BF2736483900E857B1 /* CardFullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFullView.swift; sourceTree = "<group>"; };
 		913586542737685F00AAA603 /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
 		916D76732736E9C200A4AEF8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		9D0005DE273855B400F6E8AE /* GeneWikipediaWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GeneWikipediaWebView.swift; path = "../../../../DNA-strand-Master/DNAStrand/DNAStrand/View/GeneWikipediaWebView.swift"; sourceTree = "<group>"; };
+		9D0005E0273855C900F6E8AE /* DNAShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNAShape.swift; sourceTree = "<group>"; };
+		9D0005E1273855C900F6E8AE /* DNAShapeRetryLoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNAShapeRetryLoaderView.swift; sourceTree = "<group>"; };
+		9D0005E2273855C900F6E8AE /* DigitalRain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigitalRain.swift; sourceTree = "<group>"; };
 		9D328F0427373121004E7903 /* GeneViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneViewModel.swift; sourceTree = "<group>"; };
 		9D328F0727373121004E7903 /* Bundle+LoadAndDecode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+LoadAndDecode.swift"; sourceTree = "<group>"; };
 		9D328F0827373122004E7903 /* api-result.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "api-result.json"; sourceTree = "<group>"; };
@@ -74,7 +80,10 @@
 				38E870BF2736483900E857B1 /* CardFullView.swift */,
 				916D76732736E9C200A4AEF8 /* HomeView.swift */,
 				913586542737685F00AAA603 /* CreditsView.swift */,
-				38C1D2E52738520F00DBB070 /* GeneWikipediaWebView.swift */,
+				9D0005DE273855B400F6E8AE /* GeneWikipediaWebView.swift */,
+				9D0005E2273855C900F6E8AE /* DigitalRain.swift */,
+				9D0005E0273855C900F6E8AE /* DNAShape.swift */,
+				9D0005E1273855C900F6E8AE /* DNAShapeRetryLoaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -243,19 +252,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38C1D2E62738520F00DBB070 /* GeneWikipediaWebView.swift in Sources */,
 				38E870C02736483900E857B1 /* CardFullView.swift in Sources */,
 				916D76742736E9C200A4AEF8 /* HomeView.swift in Sources */,
 				913586552737685F00AAA603 /* CreditsView.swift in Sources */,
+				9D0005E3273855C900F6E8AE /* DNAShape.swift in Sources */,
 				D20296AF2737AFF500A10358 /* AppView.swift in Sources */,
 				D20296AA273793DD00A10358 /* WikiData.swift in Sources */,
 				D20296A52737939B00A10358 /* Animation-Extension.swift in Sources */,
 				9D328F1527373122004E7903 /* GeneViewModel.swift in Sources */,
+				9D0005E5273855C900F6E8AE /* DigitalRain.swift in Sources */,
 				D20296AD273793DD00A10358 /* Gene.swift in Sources */,
 				D20296AC273793DD00A10358 /* DataFetchPhase.swift in Sources */,
 				D20296B62737C5F900A10358 /* UIColor+Extension.swift in Sources */,
 				38E870C02736483900E857B1 /* CardFullView.swift in Sources */,
 				D20296AB273793DD00A10358 /* WikiResultAPI.swift in Sources */,
+				9D0005E4273855C900F6E8AE /* DNAShapeRetryLoaderView.swift in Sources */,
+				9D0005DF273855B400F6E8AE /* GeneWikipediaWebView.swift in Sources */,
 				9D328F1F27373122004E7903 /* NetworkManager.swift in Sources */,
 				D22C6B9B2734FE6500303F44 /* DNAStrandApp.swift in Sources */,
 				3864B3BC27359F4F005CE6B3 /* CardView.swift in Sources */,

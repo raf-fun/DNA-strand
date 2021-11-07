@@ -24,6 +24,7 @@ struct CreditsView: View {
                 Section {
                     Contributor(name: "R4S3C", twitterHandle: "@R4S3CDev", website: "http://daysonsite.app")
                     Contributor(name: "Neil Jain", twitterHandle: "@neilgotnothing", website: "https://neilsultimatelab.github.io")
+                    Contributor(name: "Djallil Elkebir", twitterHandle: "@DjallilOS", website: "https://Djallil14.github.com")
                 } header: {
                     Text("Contributors")
                 }
