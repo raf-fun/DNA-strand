@@ -31,7 +31,6 @@
 		D22C6B9B2734FE6500303F44 /* DNAStrandApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22C6B9A2734FE6500303F44 /* DNAStrandApp.swift */; };
 		D22C6B9F2734FE6700303F44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D22C6B9E2734FE6700303F44 /* Assets.xcassets */; };
 		D22C6BA22734FE6700303F44 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D22C6BA12734FE6700303F44 /* Preview Assets.xcassets */; };
-		D22C6BB12735152A00303F44 /* DNAStrandService in Frameworks */ = {isa = PBXBuildFile; productRef = D22C6BB02735152A00303F44 /* DNAStrandService */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,7 +58,6 @@
 		D22C6B9A2734FE6500303F44 /* DNAStrandApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNAStrandApp.swift; sourceTree = "<group>"; };
 		D22C6B9E2734FE6700303F44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D22C6BA12734FE6700303F44 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		D22C6BA82734FF6700303F44 /* DNAStrandService */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DNAStrandService; path = ../DNAStrandService; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +65,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D22C6BB12735152A00303F44 /* DNAStrandService in Frameworks */,
 				9D328F02273730E2004E7903 /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -126,7 +123,6 @@
 		D22C6B8E2734FE6500303F44 = {
 			isa = PBXGroup;
 			children = (
-				D22C6BA82734FF6700303F44 /* DNAStrandService */,
 				D22C6B992734FE6500303F44 /* DNAStrand */,
 				D22C6B982734FE6500303F44 /* Products */,
 				D22C6BAF2735152A00303F44 /* Frameworks */,
@@ -195,7 +191,6 @@
 			);
 			name = DNAStrand;
 			packageProductDependencies = (
-				D22C6BB02735152A00303F44 /* DNAStrandService */,
 				9D328F01273730E2004E7903 /* SwiftSoup */,
 			);
 			productName = DNAStrand;
@@ -498,10 +493,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9D328F00273730E2004E7903 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
 			productName = SwiftSoup;
-		};
-		D22C6BB02735152A00303F44 /* DNAStrandService */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = DNAStrandService;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
