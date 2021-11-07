@@ -13,7 +13,6 @@ struct CardFullView: View {
     var namespace: Namespace.ID
     
     @Binding var showDetails: Bool
-    //@State var geneName: String
     
     var body: some View {
         ZStack(alignment: .topTrailing) {
