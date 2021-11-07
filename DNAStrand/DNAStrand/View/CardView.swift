@@ -21,11 +21,11 @@ struct CardView: View {
                 Text(gene.title)
                     .bold()
                     .font(.title)
-                    .foregroundStyle(LinearGradient(colors: [Color(.darkGreen), Color.accentColor], startPoint: .leading, endPoint: .trailing))
+                    .foregroundStyle(LinearGradient(colors: [.accentColor, .accentColor.opacity(0.8)], startPoint: .leading, endPoint: .trailing))
                     .padding(.vertical, 6)
                     .padding(.horizontal, 12)
                     .background(
-                        .regularMaterial
+                        .thinMaterial
                     )
                     .cornerRadius(12)
                 Spacer()
