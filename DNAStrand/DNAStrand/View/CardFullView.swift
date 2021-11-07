@@ -18,7 +18,6 @@ struct CardFullView: View {
     var body: some View {
         ZStack(alignment: .topTrailing) {
             Color(UIColor.systemGroupedBackground)
-            
             GeometryReader { geometry in
                 ScrollView(showsIndicators: false) {
                     VStack {
@@ -59,6 +58,11 @@ struct CardFullView: View {
                 alignment: .topLeading
             )
         }
+        .ignoresSafeArea()
+        .statusBar(hidden: true)
+        .background(
+            Rectangle().matchedGeometryEffect(id: "frame\(gene.id)", in: namespace)
+        )
         .onAppear {
             self.isVisible = true
         }
@@ -66,6 +70,7 @@ struct CardFullView: View {
             self.isVisible = false
         }
     }
+    
 }
 
 
