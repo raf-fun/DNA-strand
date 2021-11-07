@@ -8,7 +8,7 @@
 import Foundation
 import SwiftSoup
 
-struct WikiData: Codable, Identifiable {
+struct WikiData: Codable, Identifiable, Equatable {
     let pageid, ns: Int
     let title: String
     let thumbnail: WikiImage?

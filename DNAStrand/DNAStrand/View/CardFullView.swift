@@ -9,55 +9,68 @@ import SwiftUI
 
 struct CardFullView: View {
     
-    var gene: WikiDataPreview
+    var gene: WikiData
     var namespace: Namespace.ID
     
     @Binding var showDetails: Bool
-    @State var geneName: String
+    @State private var isVisible: Bool = false
     
     var body: some View {
         ZStack(alignment: .topTrailing) {
             Color(UIColor.systemGroupedBackground)
-            
-            ScrollView(showsIndicators: false) {
-                VStack(alignment: .leading) {
-                    gene.thumbnail
-                        .resizable()
-                        .edgesIgnoringSafeArea(.top)
-                        .aspectRatio(contentMode: .fill)
-                        .frame(maxHeight: 300, alignment: .top)
-                        .mask {
-                            Rectangle()
-                            
-                        }
-                        .matchedGeometryEffect(id: "image\(gene.id)", in: namespace)
-                    
-                    Text(gene.title.uppercased())
-                        .font(.largeTitle)
-                        .foregroundColor(.primary.opacity(0.7))
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding([.horizontal, .bottom])
-                    
-                        .matchedGeometryEffect(id: "title\(gene.id)", in: namespace)
-                    
-                    Text(gene.extract)
-                        .foregroundColor(.primary.opacity(0.7))
-                        .frame(maxWidth: .infinity, alignment: .center)
-                        .multilineTextAlignment(.leading)
-                        .padding(.horizontal)
-                    
-                    Spacer()
+            GeometryReader { geometry in
+                ScrollView(showsIndicators: false) {
+                    VStack {
+                        CardView(gene: gene, namespace: namespace, cornerRadius: 0)
+                            .matchedGeometryEffect(id: "card\(gene.id)", in: namespace)
+                        
+                        Text(gene.title.uppercased())
+                            .font(.largeTitle)
+                            .foregroundColor(.primary.opacity(0.7))
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding([.horizontal, .bottom])
+                            .matchedGeometryEffect(id: "title\(gene.id)", in: namespace)
+                            .opacity(isVisible ? 1 : 0)
+                            .animation(.easeIn(duration: 0.5), value: isVisible)
+                        
+                        Text(gene.extract)
+                            .foregroundColor(.primary.opacity(0.7))
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            .multilineTextAlignment(.leading)
+                            .padding(.horizontal)
+                            .opacity(isVisible ? 1 : 0)
+                            .animation(.easeIn(duration: 0.45).delay(0.1), value: isVisible)
+                        Spacer()
+                    }
                 }
             }
-            
-            CloseButton(showDetails: $showDetails)
+            .ignoresSafeArea()
+            .statusBar(hidden: true)
+            .background(
+                Rectangle()
+                    .fill(Color(.systemGroupedBackground))
+                    .opacity(isVisible ? 1 : 0)
+                    .animation(.default, value: isVisible)
+                    .matchedGeometryEffect(id: "frame\(gene.id)", in: namespace)
+            )
+            .overlay(
+                CloseButton(showDetails: $showDetails).padding(.top, 0),
+                alignment: .topLeading
+            )
         }
         .ignoresSafeArea()
         .statusBar(hidden: true)
         .background(
             Rectangle().matchedGeometryEffect(id: "frame\(gene.id)", in: namespace)
         )
+        .onAppear {
+            self.isVisible = true
+        }
+        .onDisappear {
+            self.isVisible = false
+        }
     }
+    
 }
 
 
@@ -107,9 +120,9 @@ struct CardFullView_Previews: PreviewProvider {
     @Namespace static var namespace
     static var previews: some View {
         Group {
-            CardFullView(gene: WikiDataPreview.preview, namespace: namespace, showDetails: .constant(true), geneName: "")
-            CardFullView(gene: WikiDataPreview.preview, namespace: namespace, showDetails: .constant(true), geneName: "")
-                .preferredColorScheme(.dark)
+            //CardFullView(gene: WikiData.preview, namespace: namespace, showDetails: .constant(true))
+            //CardFullView(gene: WikiData.preview, namespace: namespace, showDetails: .constant(true))
+                //.preferredColorScheme(.dark)
         }
         //CardFullView(geneName: "Gene name")
     }

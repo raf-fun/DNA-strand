@@ -10,9 +10,13 @@ import Foundation
 import SwiftSoup
 
 // The gene result we are getting from Wikipedia
-struct WikiAPIResult: Codable {
+struct WikiAPIResult: Codable, Equatable {
     let batchcomplete: String
     let query: Query
+    
+    var wikidata: WikiData {
+        self.query.pages.resultData
+    }
 }
 extension WikiAPIResult {
     static let sampleUser: WikiAPIResult = {
@@ -22,12 +26,12 @@ extension WikiAPIResult {
 }
 
 // MARK: - Query
-struct Query: Codable {
+struct Query: Codable, Equatable {
     let pages: Pages
 }
 
 // MARK: - Pages
-struct Pages: Codable {
+struct Pages: Codable, Equatable {
     var resultData: WikiData
 
     private struct DynamicCodingKeys: CodingKey {
@@ -55,7 +59,7 @@ struct Pages: Codable {
 }
 
 // MARK: - Image
-struct WikiImage: Codable {
+struct WikiImage: Codable, Equatable {
     let source: String
     let width, height: Int
     
@@ -74,6 +78,3 @@ struct WikiImage: Codable {
         }
     }
 }
-
-
-

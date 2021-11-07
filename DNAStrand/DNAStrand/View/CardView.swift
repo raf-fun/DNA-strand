@@ -6,40 +6,57 @@
 //
 
 import SwiftUI
+import CachedAsyncImage
 
 struct CardView: View {
     
-    var gene: WikiDataPreview
+    var gene: WikiData
     var namespace: Namespace.ID
+    var cornerRadius: CGFloat = 30
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Spacer()
-            
-            Text(gene.title)
-                .bold()
-                .foregroundColor(.white)
-                .frame(maxWidth: .infinity, alignment: .bottomLeading)
-                .shadow(color: .black, radius: 1)
-                .matchedGeometryEffect(id: "title\(gene.id)", in: namespace)
-            
+            HStack {
+                Text(gene.title)
+                    .font(.title)
+                    .foregroundStyle(LinearGradient(colors: [Color(.darkGreen), Color.accentColor], startPoint: .leading, endPoint: .trailing))
+                    .padding(.vertical, 6)
+                    .padding(.horizontal, 12)
+                    .background(
+                        .regularMaterial
+                    )
+                    .cornerRadius(12)
+                Spacer()
+            }
         }
         .padding(.horizontal, 20)
-        .padding(.vertical, 40)
+        .padding(.vertical, 20)
         .frame(maxWidth: .infinity)
         .frame(height: 300)
         .background(
-            gene.thumbnail
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(maxWidth: .infinity)
-                .frame(height: 300)
-                .disabled(true)
-                .matchedGeometryEffect(id: "image\(gene.id)", in: namespace)
-                .matchedGeometryEffect(id: "frame\(gene.id)", in: namespace)
+            Group {
+                if let urlString = gene.thumbnail?.formattedImageLink(width: 500) {
+                    CachedAsyncImage(url: URL(string: urlString)) { image in
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 300)
+                            .disabled(true)
+                            .overlay(
+                                LinearGradient(colors: [Color.gray.opacity(0), Color.black.opacity(0.2)], startPoint: .top, endPoint: .bottom)
+                            )
+                    } placeholder: {
+                        ProgressView()
+                    }
+                } else {
+                    Color.gray.opacity(0.1)
+                }
+            }
         )
         .mask(
-            RoundedRectangle(cornerRadius: 30)
+            RoundedRectangle(cornerRadius: cornerRadius)
         )
     }
   
@@ -51,11 +68,11 @@ struct CardView_Previews: PreviewProvider {
     
     static var previews: some View {
         Group {
-            CardView(gene: WikiDataPreview.preview, namespace: namespace)
-                .padding()
-            CardView(gene: WikiDataPreview.preview, namespace: namespace)
-                .preferredColorScheme(.dark)
-                .padding()
+            //CardView(gene: WikiData.preview, namespace: namespace)
+            //    .padding()
+            //CardView(gene: WikiData.preview, namespace: namespace)
+            //    .preferredColorScheme(.dark)
+            //    .padding()
         }
     }
 }
