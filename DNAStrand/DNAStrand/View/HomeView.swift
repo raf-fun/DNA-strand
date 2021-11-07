@@ -24,7 +24,7 @@ struct HomeView: View {
             
             ScrollView {
                 HStack {
-                    Text("Ingeneious")
+                    Text("inGENEious")
                         .bold()
                         .font(.largeTitle)
                         .frame(maxWidth: .infinity, alignment: .leading)

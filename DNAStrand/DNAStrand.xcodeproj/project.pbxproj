@@ -53,7 +53,7 @@
 		D20296A9273793DD00A10358 /* Gene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gene.swift; sourceTree = "<group>"; };
 		D20296AE2737AFF500A10358 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		D20296B52737C5F900A10358 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
-		D22C6B972734FE6500303F44 /* DNAStrand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DNAStrand.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D22C6B972734FE6500303F44 /* InGENEious.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InGENEious.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D22C6B9A2734FE6500303F44 /* DNAStrandApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNAStrandApp.swift; sourceTree = "<group>"; };
 		D22C6B9E2734FE6700303F44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D22C6BA12734FE6700303F44 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 		D22C6B982734FE6500303F44 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D22C6B972734FE6500303F44 /* DNAStrand.app */,
+				D22C6B972734FE6500303F44 /* InGENEious.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -194,7 +194,7 @@
 				D20296B12737BDE300A10358 /* CachedAsyncImage */,
 			);
 			productName = DNAStrand;
-			productReference = D22C6B972734FE6500303F44 /* DNAStrand.app */;
+			productReference = D22C6B972734FE6500303F44 /* InGENEious.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -416,8 +416,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.swiftuijam.DNAStrand;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.swiftuijam.InGENEious;
+				PRODUCT_NAME = InGENEious;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -446,8 +446,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.swiftuijam.DNAStrand;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.swiftuijam.InGENEious;
+				PRODUCT_NAME = InGENEious;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
