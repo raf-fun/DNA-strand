@@ -35,6 +35,7 @@
 		D22C6B9B2734FE6500303F44 /* DNAStrandApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22C6B9A2734FE6500303F44 /* DNAStrandApp.swift */; };
 		D22C6B9F2734FE6700303F44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D22C6B9E2734FE6700303F44 /* Assets.xcassets */; };
 		D22C6BA22734FE6700303F44 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D22C6BA12734FE6700303F44 /* Preview Assets.xcassets */; };
+		DA64CFFE27383817009B6F4D /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA64CFFD27383817009B6F4D /* TitleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		D22C6B9A2734FE6500303F44 /* DNAStrandApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNAStrandApp.swift; sourceTree = "<group>"; };
 		D22C6B9E2734FE6700303F44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D22C6BA12734FE6700303F44 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DA64CFFD27383817009B6F4D /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				9D328F0F27373122004E7903 /* GeneView.swift */,
 				9D328F0927373122004E7903 /* GeneViewLoader.swift */,
 				9D328F1227373122004E7903 /* GeneWikipediaWebView.swift */,
+				DA64CFFD27383817009B6F4D /* TitleView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				D20296AD273793DD00A10358 /* Gene.swift in Sources */,
 				9D328F2127373122004E7903 /* MainView.swift in Sources */,
 				D20296B42737BE8F00A10358 /* URLSession+ImageChach.swift in Sources */,
+				DA64CFFE27383817009B6F4D /* TitleView.swift in Sources */,
 				D20296AC273793DD00A10358 /* DataFetchPhase.swift in Sources */,
 				D20296B62737C5F900A10358 /* UIColor+Extension.swift in Sources */,
 				38E870C02736483900E857B1 /* CardFullView.swift in Sources */,

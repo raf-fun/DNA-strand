@@ -14,6 +14,7 @@ struct CardFullView: View {
     
     @Binding var showDetails: Bool
     @State private var isVisible: Bool = false
+    @State var geneURL: WikiData? = nil
     
     var body: some View {
         ZStack(alignment: .topTrailing) {
@@ -24,22 +25,27 @@ struct CardFullView: View {
                         CardView(gene: gene, namespace: namespace, cornerRadius: 0)
                             .matchedGeometryEffect(id: "card\(gene.id)", in: namespace)
                         
-                        Text(gene.title.uppercased())
-                            .font(.largeTitle)
-                            .foregroundColor(.primary.opacity(0.7))
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding([.horizontal, .bottom])
-                            .matchedGeometryEffect(id: "title\(gene.id)", in: namespace)
-                            .opacity(isVisible ? 1 : 0)
-                            .animation(.easeIn(duration: 0.5), value: isVisible)
-                        
-                        Text(gene.extract)
+                        Text(gene.firstParagraph ?? "")
                             .foregroundColor(.primary.opacity(0.7))
                             .frame(maxWidth: .infinity, alignment: .center)
                             .multilineTextAlignment(.leading)
                             .padding(.horizontal)
                             .opacity(isVisible ? 1 : 0)
                             .animation(.easeIn(duration: 0.45).delay(0.1), value: isVisible)
+                        HStack {
+                            Spacer()
+                            Button(action: {
+                                withAnimation {
+                                    geneURL = gene
+                                }
+                            }){
+                                Label("Show me more", systemImage: "safari")
+                                    .padding(8)
+                            }.buttonStyle(.borderedProminent)
+                            Spacer()
+                        }.sheet(item: $geneURL){gene in
+                            GeneWikipediaWebView(url: gene.wikipediaLink)
+                        }
                         Spacer()
                     }
                 }
@@ -55,7 +61,7 @@ struct CardFullView: View {
             )
             .overlay(
                 CloseButton(showDetails: $showDetails).padding(.top, 0),
-                alignment: .topLeading
+                alignment: .topTrailing
             )
         }
         .ignoresSafeArea()
@@ -96,22 +102,6 @@ struct CloseButton: View {
                     .foregroundColor(.primary)
             }
         }.ignoresSafeArea()
-    }
-}
-
-struct TitleParagraphDisplayView: View {
-    var body: some View {
-        VStack {
-            Text("Title inside Gene:")
-                .bold()
-                .frame( maxWidth: .infinity, alignment: .leading)
-                .shadow(radius: 1, x: 5, y: 5)
-                .padding(.bottom, 0.5)
-            
-            Text("Stranded. Yes, she was now the first person ever to land on Venus, but that was of little consequence. Her name would be read by millions in school as the first to land here, but that celebrity would never actually be seen by her. She looked at the control panel and knew there was nothing that would ever get it back into working order. She was the first and it was not clear this would also be her last.")
-        }
-        .foregroundColor(.white.opacity(0.8))
-        .padding()
     }
 }
 

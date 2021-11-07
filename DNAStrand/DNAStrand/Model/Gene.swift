@@ -11,7 +11,7 @@ enum Gene: String, CaseIterable {
     case Insulin
     case Titin
     case Vasopressin
-    case Prolactin
+    case MTOR
     case CReactiveProtein
     case Erythropoietin
     case ParathyroidHormone
@@ -27,8 +27,8 @@ enum Gene: String, CaseIterable {
             return "Titin"
         case .Vasopressin:
             return "Vasopressin"
-        case .Prolactin:
-            return "Prolactin"
+        case .MTOR:
+            return "MTOR"
         case .CReactiveProtein:
             return "C-reactive%20protein"
         case .Erythropoietin:
