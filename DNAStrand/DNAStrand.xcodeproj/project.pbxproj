@@ -31,6 +31,7 @@
 		D20296AF2737AFF500A10358 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20296AE2737AFF500A10358 /* AppView.swift */; };
 		D20296B22737BDE300A10358 /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = D20296B12737BDE300A10358 /* CachedAsyncImage */; };
 		D20296B42737BE8F00A10358 /* URLSession+ImageChach.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20296B32737BE8F00A10358 /* URLSession+ImageChach.swift */; };
+		D20296B62737C5F900A10358 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20296B52737C5F900A10358 /* UIColor+Extension.swift */; };
 		D22C6B9B2734FE6500303F44 /* DNAStrandApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22C6B9A2734FE6500303F44 /* DNAStrandApp.swift */; };
 		D22C6B9F2734FE6700303F44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D22C6B9E2734FE6700303F44 /* Assets.xcassets */; };
 		D22C6BA22734FE6700303F44 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D22C6BA12734FE6700303F44 /* Preview Assets.xcassets */; };
@@ -59,6 +60,7 @@
 		D20296A9273793DD00A10358 /* Gene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gene.swift; sourceTree = "<group>"; };
 		D20296AE2737AFF500A10358 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		D20296B32737BE8F00A10358 /* URLSession+ImageChach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+ImageChach.swift"; sourceTree = "<group>"; };
+		D20296B52737C5F900A10358 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		D22C6B972734FE6500303F44 /* DNAStrand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DNAStrand.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D22C6B9A2734FE6500303F44 /* DNAStrandApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNAStrandApp.swift; sourceTree = "<group>"; };
 		D22C6B9E2734FE6700303F44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				9D328F0627373121004E7903 /* HTMLAttributedString+String.swift */,
 				9D328F0727373121004E7903 /* Bundle+LoadAndDecode.swift */,
 				D20296B32737BE8F00A10358 /* URLSession+ImageChach.swift */,
+				D20296B52737C5F900A10358 /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				9D328F2127373122004E7903 /* MainView.swift in Sources */,
 				D20296B42737BE8F00A10358 /* URLSession+ImageChach.swift in Sources */,
 				D20296AC273793DD00A10358 /* DataFetchPhase.swift in Sources */,
+				D20296B62737C5F900A10358 /* UIColor+Extension.swift in Sources */,
 				38E870C02736483900E857B1 /* CardFullView.swift in Sources */,
 				D20296AB273793DD00A10358 /* WikiResultAPI.swift in Sources */,
 				9D328F1627373122004E7903 /* HTMLAttributedString+String.swift in Sources */,

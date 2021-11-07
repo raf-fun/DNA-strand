@@ -21,36 +21,28 @@ struct HomeView: View {
         ZStack {
             Color(UIColor.systemGroupedBackground).ignoresSafeArea()
             
-            if showDetails, let selectedGeneCard = selectedGeneCard {
-                CardFullView(
-                    gene: selectedGeneCard,
-                    namespace: namespace,
-                    showDetails: $showDetails
-                )
-            }
-            else {
-                ScrollView {
-                    HStack {
-                        Text("DNAStrand")
-                            .bold()
-                            .font(.largeTitle)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding()
-                        
-                        Spacer()
-                        
-                        Button {
-                            showCredits = true
-                        } label: {
-                            Image(systemName: "info.circle")
-                                .padding(.horizontal)
-                        }
-                    }
-                    .zIndex(1)
+            ScrollView {
+                HStack {
+                    Text("DNAStrand")
+                        .bold()
+                        .font(.largeTitle)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding()
                     
-                    cards
+                    Spacer()
+                    
+                    Button {
+                        showCredits = true
+                    } label: {
+                        Image(systemName: "info.circle")
+                            .padding(.horizontal)
+                    }
                 }
-            }
+                .zIndex(1)
+                cards
+            }.overlay(
+                overlayView
+            )
         }
         .statusBar(hidden: showDetails)
         .sheet(isPresented: $showCredits) {
@@ -81,6 +73,18 @@ struct HomeView: View {
             Text(error.localizedDescription)
         }
         
+    }
+    
+    @ViewBuilder
+    var overlayView: some View {
+        if showDetails, let selectedGeneCard = selectedGeneCard {
+            CardFullView(
+                gene: selectedGeneCard,
+                namespace: namespace,
+                showDetails: $showDetails
+            )
+            .ignoresSafeArea(.all, edges: .all)
+        }
     }
     
 }
