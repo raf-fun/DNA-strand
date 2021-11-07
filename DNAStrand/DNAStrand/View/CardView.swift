@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CardView: View {
     
-    var gene: WikiDataPreview
+    var gene: WikiData
     var namespace: Namespace.ID
     
     var body: some View {
@@ -29,14 +29,26 @@ struct CardView: View {
         .frame(maxWidth: .infinity)
         .frame(height: 300)
         .background(
-            gene.thumbnail
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(maxWidth: .infinity)
-                .frame(height: 300)
-                .disabled(true)
-                .matchedGeometryEffect(id: "image\(gene.id)", in: namespace)
-                .matchedGeometryEffect(id: "frame\(gene.id)", in: namespace)
+            Group {
+                if let urlString = gene.thumbnail?.formattedImageLink(width: 500) {
+                    AsyncImage(url: URL(string: urlString)) { image in
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 300)
+                            .disabled(true)
+                            .matchedGeometryEffect(id: "image\(gene.id)", in: namespace)
+                            .overlay(
+                                LinearGradient(colors: [Color.gray.opacity(0), Color.gray.opacity(0.1)], startPoint: .top, endPoint: .bottom)
+                            )
+                    } placeholder: {
+                        ProgressView()
+                    }
+                } else {
+                    Color.gray.opacity(0.1)
+                }
+            }
         )
         .mask(
             RoundedRectangle(cornerRadius: 30)
@@ -51,11 +63,11 @@ struct CardView_Previews: PreviewProvider {
     
     static var previews: some View {
         Group {
-            CardView(gene: WikiDataPreview.preview, namespace: namespace)
-                .padding()
-            CardView(gene: WikiDataPreview.preview, namespace: namespace)
-                .preferredColorScheme(.dark)
-                .padding()
+            //CardView(gene: WikiData.preview, namespace: namespace)
+            //    .padding()
+            //CardView(gene: WikiData.preview, namespace: namespace)
+            //    .preferredColorScheme(.dark)
+            //    .padding()
         }
     }
 }

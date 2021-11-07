@@ -9,19 +9,24 @@ import SwiftUI
 
 struct HomeView: View {
     @Namespace var namespace
+    @ObservedObject var geneStore: GeneViewModel
     
     @State private var showDetails = false
     @State private var showCredits = false
-    @State private var selectedGeneCard: WikiDataPreview?
+    @State private var selectedGeneCard: WikiData?
     
-    var allGenes: [WikiDataPreview] = WikiDataPreview.geneDataExample
+    var allGenes: [WikiData] = []
     
     var body: some View {
         ZStack {
             Color(UIColor.systemGroupedBackground).ignoresSafeArea()
             
-            if showDetails {
-                CardFullView(gene: selectedGeneCard ?? WikiDataPreview.preview, namespace: namespace, showDetails: $showDetails, geneName: "")
+            if showDetails, let selectedGeneCard = selectedGeneCard {
+                CardFullView(
+                    gene: selectedGeneCard,
+                    namespace: namespace,
+                    showDetails: $showDetails
+                )
             }
             else {
                 ScrollView {
@@ -54,17 +59,27 @@ struct HomeView: View {
 
     }
     
+    @ViewBuilder
     var cards: some View {
-        ForEach(allGenes) { gene in
-            CardView(gene: gene, namespace: namespace)
-                .padding()
-                .onTapGesture {
-                    withAnimation(.openCard) {
-                        selectedGeneCard = gene
-                        showDetails =  true
+        switch geneStore.dataPhase {
+        case .empty:
+            ProgressView()
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+        case .success(let genes):
+            ForEach(genes, id: \.wikidata.title) { gene in
+                CardView(gene: gene.wikidata, namespace: namespace)
+                    .padding()
+                    .onTapGesture {
+                        withAnimation(.openCard) {
+                            selectedGeneCard = gene.query.pages.resultData
+                            showDetails =  true
+                        }
                     }
-                }
+            }
+        case .failure(let error):
+            Text(error.localizedDescription)
         }
+        
     }
     
 }
@@ -72,7 +87,7 @@ struct HomeView: View {
 #if DEBUG
 struct DNAStrandHomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(geneStore: GeneViewModel.init())
     }
 }
 #endif

@@ -9,13 +9,28 @@ import SwiftUI
 
 struct MainView: View {
     @StateObject var geneStore = GeneViewModel()
+    @State private var showCredits = false
+    
     var body: some View {
-        NavigationView{
+        NavigationView {
             GeneViewLoader(geneVM: geneStore, showGene: .Insulin)
                 .navigationTitle("Most Popular Genes")
+                .navigationBarItems(trailing: creditItem)
+        }
+        .sheet(isPresented: $showCredits) {
+            CreditsView()
         }
         .task {
             await geneStore.getGene()
+        }
+    }
+    
+    var creditItem: some View {
+        Button {
+            showCredits = true
+        } label: {
+            Image(systemName: "info.circle")
+                .padding(.horizontal)
         }
     }
 }

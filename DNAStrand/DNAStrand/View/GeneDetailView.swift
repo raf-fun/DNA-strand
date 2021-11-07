@@ -7,16 +7,17 @@
 
 import SwiftUI
 
-struct GeneDetailView: View {
-    
+struct OtherGeneDetailView: View {
     @Environment(\.dismiss) var dismiss
-    
     let gene: WikiAPIResult
+    var namespace: Namespace.ID
+    var onCompletion: (()->Void)?
     
     var geneData: WikiData {
         gene.query.pages.resultData
     }
     
+    @State var geneURL: WikiData? = nil
     var body: some View {
         ZStack(alignment:.top) {
             ScrollView {
@@ -26,93 +27,23 @@ struct GeneDetailView: View {
                             image
                                 .resizable()
                                 .aspectRatio(1, contentMode: .fit)
-                        } placeholder: {
-                            ProgressView()
-                        }
-                        .overlay (
-                            VStack {
-                                Button(action: {dismiss()}) {
-                                    Image(systemName: "xmark")
-                                }.tint(.black)
-                                    .padding(8)
-                                    .background(.ultraThinMaterial)
-                                    .clipShape(Circle())
-                                    .padding(24)
-                                    .position(x: 40, y: 60)
-                                Spacer()
-                                HStack{
-                                    Spacer()
-                                    Text(geneData.title)
-                                        .bold()
-                                        .font(.title2)
-                                        .padding()
-                                    Spacer()
-                                }.background(.ultraThinMaterial)
-                            }
-                        )
-                        .cornerRadius(12)
-                    }
-                    Text("Description").font(.headline)
-                        .padding()
-                    Text(AttributedString(geneData.extract.htmlAttributedString!))
-                        .padding()
-                    Spacer()
-                }
-            }
-        }
-        .edgesIgnoringSafeArea(.top)
-        .navigationBarHidden(true)
-        
-    }
-}
-
-struct GeneDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        OtherGeneDetailView(gene: WikiAPIResult.sampleUser)
-    }
-}
-
-struct OtherGeneDetailView: View {
-    @Environment(\.dismiss) var dismiss
-    let gene: WikiAPIResult
-    var geneData: WikiData {
-        gene.query.pages.resultData
-    }
-    @State var geneURL: WikiData? = nil
-    var body: some View {
-        ZStack(alignment:.top){
-            ScrollView{
-                VStack(alignment:.leading, spacing: 0){
-                    if let image = geneData.thumbnail {
-                        AsyncImage(url: URL(string: image.formattedImageLink(width: 500))) { image in
-                            image
-                                .resizable()
-                                .aspectRatio(1, contentMode: .fit)
+                                .matchedGeometryEffect(id: "image\(geneData.id)", in: namespace)
                         } placeholder: {
                             ProgressView()
                         }
                         .overlay(
-                            VStack{
-                                    Button(action: {dismiss()}){
-                                    Image(systemName: "xmark")
-                                    }.tint(.black)
-                                    .padding(8)
-                                    .background(.ultraThinMaterial)
-                                    .clipShape(Circle())
-                                    .padding(24)
-                                    .position(x: 40, y: 60)
-                                Spacer()
-                                HStack{
-                                    Spacer()
-                                Text(geneData.title)
-                                        .bold()
-                                        .font(.title2)
-                                        .padding()
-                                    Spacer()
-                                }.background(.ultraThinMaterial)
-                            }
+                            LinearGradient(colors: [Color.gray.opacity(0.1), Color.gray.opacity(0.5)], startPoint: .top, endPoint: .bottom)
+                                .frame(maxWidth: .infinity, maxHeight: .infinity)
                         )
                         .cornerRadius(12)
+                        .overlay(
+                            Text(geneData.title)
+                                .bold()
+                                .font(.title)
+                                .padding(),
+                                //.matchedGeometryEffect(id: "title\(geneData.title)", in: namespace),
+                            alignment: .bottomLeading
+                        )
                     }
                     Text("Description").font(.headline)
                         .padding()
@@ -121,8 +52,8 @@ struct OtherGeneDetailView: View {
                     HStack {
                         Spacer()
                         Button(action: {
-                            withAnimation{
-                            geneURL = geneData
+                            withAnimation {
+                                geneURL = geneData
                             }
                         }){
                             Label("Show me more", systemImage: "safari")
@@ -136,7 +67,32 @@ struct OtherGeneDetailView: View {
                 }
             }
         }
+        .overlay(
+            Button(action: {
+                dismiss()
+                self.onCompletion?()
+            }){
+                Image(systemName: "xmark")
+            }.tint(.black)
+                .padding(8)
+                .background(.thinMaterial)
+                .clipShape(Circle())
+                .padding(24)
+                .position(x: 40, y: 60),
+            alignment: .topLeading
+        )
+        .background(
+            Color(.systemBackground)
+                .ignoresSafeArea(.all, edges: .all)
+        )
         .edgesIgnoringSafeArea(.top)
         .navigationBarHidden(true)
+    }
+}
+
+struct GeneDetailView_Previews: PreviewProvider {
+    @Namespace static var namespace
+    static var previews: some View {
+        OtherGeneDetailView(gene: WikiAPIResult.sampleUser, namespace: namespace)
     }
 }

@@ -9,11 +9,11 @@ import SwiftUI
 
 struct CardFullView: View {
     
-    var gene: WikiDataPreview
+    var gene: WikiData
     var namespace: Namespace.ID
     
     @Binding var showDetails: Bool
-    @State var geneName: String
+    //@State var geneName: String
     
     var body: some View {
         ZStack(alignment: .topTrailing) {
@@ -22,14 +22,21 @@ struct CardFullView: View {
             GeometryReader { geometry in
                 ScrollView(showsIndicators: false) {
                     VStack {
-                        gene.thumbnail
-                            .resizable()
-                            .edgesIgnoringSafeArea(.top)
-                            .aspectRatio(contentMode: .fill)
-                            .frame(height: 300, alignment: .top)
-                            .mask {
-                                Rectangle()
+                        if let urlString = gene.thumbnail?.formattedImageLink(width: 500) {
+                            AsyncImage(url: URL(string: urlString)) { image in
+                                image
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(maxWidth: .infinity)
+                                    .frame(height: 300)
+                                    .disabled(true)
+                                    .matchedGeometryEffect(id: "image\(gene.id)", in: namespace)
+                            } placeholder: {
+                                ProgressView()
                             }
+                        } else {
+                            Color.gray.opacity(0.2)
+                        }
                         //.geneViewModifier(for: geneName)
                         
                         //ForEach(1..<5) { _ in
@@ -53,8 +60,6 @@ struct CardFullView: View {
                         Spacer()
                     }
                 }
-                
-                CloseButton(showDetails: $showDetails)
             }
             .ignoresSafeArea()
             .statusBar(hidden: true)
@@ -62,6 +67,10 @@ struct CardFullView: View {
                 Rectangle()
                     .fill(Color(.systemGroupedBackground))
                     .matchedGeometryEffect(id: "frame\(gene.id)", in: namespace)
+            )
+            .overlay(
+                CloseButton(showDetails: $showDetails).padding(.top, 0),
+                alignment: .topLeading
             )
         }
     }
@@ -114,9 +123,9 @@ struct CardFullView_Previews: PreviewProvider {
     @Namespace static var namespace
     static var previews: some View {
         Group {
-            CardFullView(gene: WikiDataPreview.preview, namespace: namespace, showDetails: .constant(true), geneName: "")
-            CardFullView(gene: WikiDataPreview.preview, namespace: namespace, showDetails: .constant(true), geneName: "")
-                .preferredColorScheme(.dark)
+            //CardFullView(gene: WikiData.preview, namespace: namespace, showDetails: .constant(true))
+            //CardFullView(gene: WikiData.preview, namespace: namespace, showDetails: .constant(true))
+                //.preferredColorScheme(.dark)
         }
         //CardFullView(geneName: "Gene name")
     }
