@@ -13,6 +13,7 @@ struct CardFullView: View {
     var namespace: Namespace.ID
     
     @Binding var showDetails: Bool
+    @State private var isVisible: Bool = false
     
     var body: some View {
         ZStack(alignment: .topTrailing) {
@@ -30,13 +31,16 @@ struct CardFullView: View {
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding([.horizontal, .bottom])
                             .matchedGeometryEffect(id: "title\(gene.id)", in: namespace)
+                            .opacity(isVisible ? 1 : 0)
+                            .animation(.easeIn(duration: 0.5), value: isVisible)
                         
                         Text(gene.extract)
                             .foregroundColor(.primary.opacity(0.7))
                             .frame(maxWidth: .infinity, alignment: .center)
                             .multilineTextAlignment(.leading)
                             .padding(.horizontal)
-                        
+                            .opacity(isVisible ? 1 : 0)
+                            .animation(.easeIn(duration: 0.45).delay(0.1), value: isVisible)
                         Spacer()
                     }
                 }
@@ -46,12 +50,20 @@ struct CardFullView: View {
             .background(
                 Rectangle()
                     .fill(Color(.systemGroupedBackground))
+                    .opacity(isVisible ? 1 : 0)
+                    .animation(.default, value: isVisible)
                     .matchedGeometryEffect(id: "frame\(gene.id)", in: namespace)
             )
             .overlay(
                 CloseButton(showDetails: $showDetails).padding(.top, 0),
                 alignment: .topLeading
             )
+        }
+        .onAppear {
+            self.isVisible = true
+        }
+        .onDisappear {
+            self.isVisible = false
         }
     }
 }
